@@ -374,16 +374,38 @@ void Output::DrawSwitch(GraphicsInfo r_GfxInfo, bool selected, bool On) const
 	if (selected) // First, check if the switch is highlighted
 	{
 		if (On) // Is it selected AND on?
-			GateImage = "Images\\Gates\\Switch_ON_Hi.jpg";
+			GateImage = "Images\\Gates\\SWITCH_1_HI.jpg";
 		else // It's selected AND off
-			GateImage = "Images\\Gates\\Switch_OFF_Hi.jpg";
+			GateImage = "Images\\Gates\\SWITCH_0_HI.jpg";
 	}
 	else // If it's not selected
 	{
 		if (On) // Is it not selected AND on?
-			GateImage = "Images\\Gates\\Switch_ON.jpg";
+			GateImage = "Images\\Gates\\SWITCH_1.jpg";
 		else // It's not selected AND off
-			GateImage = "Images\\Gates\\Switch_OFF.jpg";
+			GateImage = "Images\\Gates\\SWITCH_0.jpg";
+	}
+
+	//Draw the correct switch image
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.Switch_Width, UI.Switch_Height);
+}
+void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected, bool On) const
+{
+	string GateImage;
+
+	if (selected) // First, check if the switch is highlighted
+	{
+		if (On) // Is it selected AND on?
+			GateImage = "Images\\Gates\\LED_ON_HI.jpg";
+		else // It's selected AND off
+			GateImage = "Images\\Gates\\LED_OFF_HI.jpg";
+	}
+	else // If it's not selected
+	{
+		if (On) // Is it not selected AND on?
+			GateImage = "Images\\Gates\\LED_ON.jpg";
+		else // It's not selected AND off
+			GateImage = "Images\\Gates\\LED_OFF.jpg";
 	}
 
 	//Draw the correct switch image

@@ -37,6 +37,7 @@ public:
 
 	// I/O and Tunnels (5 functions)
 	void DrawSwitch(GraphicsInfo r_GfxInfo, bool selected, bool On) const;
+	void DrawLED(GraphicsInfo r_GfxInfo, bool selected, bool On) const;
 	void DrawLampGreen(GraphicsInfo r_GfxInfo, bool selected, bool On) const;
 	void DrawLampRed(GraphicsInfo r_GfxInfo, bool selected, bool On) const;
 	void DrawLampBLUE(GraphicsInfo r_GfxInfo, bool selected, bool On) const;

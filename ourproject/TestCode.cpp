@@ -145,10 +145,27 @@ int main()
 	pOut->PrintMsg("Drawing Switch and LED, Normal and Highlighted,  Click to continue");
 	
 	// Switch: off normal, on highlighted
-	//GfxInfo.x1 = 120; GfxInfo.y1 = 100;
-	//pOut->DrawSwitch(GfxInfo, false, false); // not selected, off
-	//GfxInfo.x1 = 320; GfxInfo.y1 = 100;
-	//pOut->DrawSwitch(GfxInfo, true, true); // selected, on
+	GfxInfo.x1 = 120; GfxInfo.y1 = 100;
+	pOut->DrawSwitch(GfxInfo, false, false); // not selected, off
+	GfxInfo.x1 = 320; GfxInfo.y1 = 100;
+	pOut->DrawSwitch(GfxInfo, true, false); // selected, on
+	// Switch: off normal, on highlighted
+	GfxInfo.x1 = 120; GfxInfo.y1 = 200;
+	pOut->DrawSwitch(GfxInfo, false, true); // not selected, off
+	GfxInfo.x1 = 320; GfxInfo.y1 = 200;
+	pOut->DrawSwitch(GfxInfo, true, true);
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->ClearDrawingArea();
+	// LED: off normal, on highlighted
+	GfxInfo.x1 = 120; GfxInfo.y1 = 100;
+	pOut->DrawLED(GfxInfo, false, false); // not selected, off
+	GfxInfo.x1 = 320; GfxInfo.y1 = 100;
+	pOut->DrawLED(GfxInfo, true, false); // selected, on
+	// LED: off normal, on highlighted
+	GfxInfo.x1 = 120; GfxInfo.y1 = 200;
+	pOut->DrawLED(GfxInfo, false, true); // not selected, off
+	GfxInfo.x1 = 320; GfxInfo.y1 = 200;
+	pOut->DrawLED(GfxInfo, true, true);
 
 	// Lamps: Green, Red, Blue - each off and on (normal/highlighted where applicable)
 	//GfxInfo.x1 = 120; GfxInfo.y1 = 240;
