@@ -1,6 +1,7 @@
 #include "AddANDgate2.h"
 #include "..\ApplicationManager.h"
-
+#include <iostream>
+using namespace std;
 AddANDgate2::AddANDgate2(ApplicationManager *pApp):Action(pApp)
 {
 }
@@ -16,10 +17,21 @@ void AddANDgate2::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	//Print Action Message
-	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
 
+	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
+	double y1;
+	double y2;
 	//Wait for User Input
-	pIn->GetPointClicked(Cx, Cy);
+	int Wdth = UI.AND2_Height;
+	do {
+		pIn->GetPointClicked(Cx, Cy);
+		y1 = Cy - Wdth / 2;
+		y2 = Cy + Wdth / 2;
+		cout << y1 << " " << UI.height - UI.StatusBarHeight<<endl;
+		cout << y2 << " " << UI.ToolBarHeight<<endl;
+		cout << "goa"<<endl;
+		cout << (y2 < UI.ToolBarHeight) << " " << (y1 >= UI.height - UI.StatusBarHeight) <<endl;
+	} while (y1 < UI.ToolBarHeight || y2 >= UI.height - UI.StatusBarHeight);
 
 	//Clear Status Bar
 	pOut->ClearStatusBar();
