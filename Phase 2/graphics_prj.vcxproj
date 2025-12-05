@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -170,7 +171,6 @@
     <ClCompile Include="Components\OutputPin.cpp" />
     <ClCompile Include="Components\Pin.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
-    <ClCompile Include="Delete.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
     <ClCompile Include="main.cpp" />
@@ -178,6 +178,7 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -207,7 +208,6 @@
     <ClInclude Include="Components\Pin.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Defs.H" />
-    <ClInclude Include="Delete.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />

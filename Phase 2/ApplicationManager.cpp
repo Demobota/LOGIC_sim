@@ -1,6 +1,6 @@
-#include "ApplicationManager.h"
+﻿#include "ApplicationManager.h"
 #include "Actions\AddANDgate2.h"
-
+#include"Actions\Select.h"
 
 ApplicationManager::ApplicationManager()
 {
@@ -39,8 +39,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
 			break;
-	
-
+		case SELECT:
+			pAct = new Select(this,CompList, CompCount);
+			break;
 		case EXIT:
 			///TODO: create ExitAction here
 			break;
@@ -57,7 +58,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 void ApplicationManager::UpdateInterface()
 {
 		for(int i=0; i<CompCount; i++)
-			CompList[i]->Draw(OutputInterface);
+			CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
 
 }
 

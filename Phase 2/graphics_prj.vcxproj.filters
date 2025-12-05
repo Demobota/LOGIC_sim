@@ -140,7 +140,7 @@
     <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
       <Filter>CMUgraphics Library</Filter>
     </ClCompile>
-    <ClCompile Include="Delete.cpp">
+    <ClCompile Include="Actions\Select.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -245,7 +245,7 @@
     <ClInclude Include="CMUgraphicsLib\windowinput.h">
       <Filter>CMUgraphics Library</Filter>
     </ClInclude>
-    <ClInclude Include="Delete.h">
+    <ClInclude Include="Actions\Select.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

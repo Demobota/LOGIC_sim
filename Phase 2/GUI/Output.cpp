@@ -11,7 +11,7 @@ Output::Output()
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
 	UI.MsgColor = BLUE;
-	UI.BkGrndColor = WHITE;
+	UI.BkGrndColor = WHITESMOKE;
 	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
@@ -21,7 +21,6 @@ Output::Output()
 	CreateStatusBar();		//Create Status bar
 
 }
-
 Input* Output::CreateInput() const
 {
 	//Create an Input Object & assign it to the Same Window

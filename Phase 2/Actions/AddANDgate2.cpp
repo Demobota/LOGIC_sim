@@ -1,5 +1,6 @@
 #include "AddANDgate2.h"
 #include "..\ApplicationManager.h"
+//delete after testing is done
 #include <iostream>
 using namespace std;
 AddANDgate2::AddANDgate2(ApplicationManager *pApp):Action(pApp)
@@ -21,16 +22,14 @@ void AddANDgate2::ReadActionParameters()
 	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
 	double y1;
 	double y2;
-	//Wait for User Input
+	
 	int Wdth = UI.AND2_Height;
+	//Validation to not allow user to place gate at ToolBar or status bar
 	do {
+		//Wait for User Input
 		pIn->GetPointClicked(Cx, Cy);
 		y1 = Cy - Wdth / 2;
 		y2 = Cy + Wdth / 2;
-		cout << y1 << " " << UI.height - UI.StatusBarHeight<<endl;
-		cout << y2 << " " << UI.ToolBarHeight<<endl;
-		cout << "goa"<<endl;
-		cout << (y2 < UI.ToolBarHeight) << " " << (y1 >= UI.height - UI.StatusBarHeight) <<endl;
 	} while (y1 < UI.ToolBarHeight || y2 >= UI.height - UI.StatusBarHeight);
 
 	//Clear Status Bar

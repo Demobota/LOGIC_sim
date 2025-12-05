@@ -1,4 +1,5 @@
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddANDgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddANDgate2.obj
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\Select.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Select.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\CMUgraphicsLib\auxil.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\auxil.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\CMUgraphicsLib\CMUgraphics.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\CMUgraphics.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\CMUgraphicsLib\image.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\image.obj
@@ -42,7 +43,6 @@ C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\InputPin.cpp;C:\Users\adel0\re
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\OutputPin.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\OutputPin.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Pin.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Pin.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\ApplicationManager.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\ApplicationManager.obj
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Delete.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Delete.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\GUI\Input.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Input.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\GUI\Output.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Output.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\main.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\main.obj

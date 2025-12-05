@@ -1,7 +1,7 @@
-#ifndef _ADD_AND_GATE_H
+﻿#ifndef _ADD_AND_GATE_H
 #define _ADD_AND_GATE_H
 
-#include "action.h"
+#include "Action.h"
 #include "..\Components\AND2.h"
 
 class AddANDgate2 :	public Action
