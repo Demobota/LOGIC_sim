@@ -12,7 +12,7 @@ private:
 public:
 	Input(window*);
 	void GetPointClicked(int &x, int &y);	//Get coordinate where user clicks
-	string GetSrting(Output* pOut);		//Returns a string entered by the user
+	string GetString(Output* pOut);		//Returns a string entered by the user (corrected name)
 
 	ActionType GetUserAction() const; //Reads the user click and maps it to an action
 

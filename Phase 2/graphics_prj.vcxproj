@@ -173,7 +173,9 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
+    <ClCompile Include="LoadAction1.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SaveAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -211,6 +213,8 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
+    <ClInclude Include="LoadAction1.h" />
+    <ClInclude Include="SaveAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

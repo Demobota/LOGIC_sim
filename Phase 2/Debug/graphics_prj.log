@@ -1,3 +1,11 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  LoadAction1.cpp
+  ApplicationManager.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  SaveAction.cpp
+  main.cpp
   Select.cpp
-  graphics_prj.vcxproj -> C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\graphics_prj.exe
+  AddANDgate2.cpp
+AddANDgate2.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  graphics_prj.vcxproj -> C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\graphics_prj.exe

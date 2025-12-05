@@ -143,6 +143,12 @@
     <ClCompile Include="Actions\Select.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="SaveAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadAction1.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defs.H" />
@@ -246,6 +252,12 @@
       <Filter>CMUgraphics Library</Filter>
     </ClInclude>
     <ClInclude Include="Actions\Select.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadAction1.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
