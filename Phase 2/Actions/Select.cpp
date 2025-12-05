@@ -1,7 +1,5 @@
 ﻿#include "Select.h"
-#include "..\ApplicationManager.h"
-#include "..\GUI\Output.h"
-#include "..\GUI\Input.h"
+
 
 Select::Select(ApplicationManager* pApp, Component* compList[],int length)
 	: Action(pApp), Components(compList),countcomp(length)
@@ -20,7 +18,7 @@ void Select::ReadActionParameters()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	Output* pOut = pManager->GetOutput();
-	pOut->PrintMsg("Click again on same component ");
+	pOut->PrintMsg("Click on a component to select it  ");
 	Input* pIn = pManager->GetInput();
 	//Validation to not allow user to select non gates
 	do {

@@ -11,7 +11,7 @@ Output::Output()
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
 	UI.MsgColor = BLUE;
-	UI.BkGrndColor = WHITESMOKE;
+	UI.BkGrndColor = WHITE;
 	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
@@ -72,6 +72,14 @@ void Output::ClearStatusBar()const
 	pWind->SetPen(UI.BkGrndColor);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(MsgX, UI.height - MsgY, UI.width, UI.height);
+}
+void Output::whiteBox(int x1,int y1,int x2, int y2)const
+{
+	// Set the Message offset from the Status Bar
+	//Overwrite using bachground color to erase the message
+	pWind->SetPen(UI.BkGrndColor);
+	pWind->SetBrush(UI.BkGrndColor);
+	pWind->DrawRectangle(x1, y1, x2, y2);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 //Clears the drawing (degin) area

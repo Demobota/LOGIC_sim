@@ -10,7 +10,7 @@ public:
 	Output(); // Performs the Window Initialization
 	Input* CreateInput() const; //creates a pointer to the Input object
 	void ChangeTitle(string Title) const;
-
+	void whiteBox( int dimx, int dimy,int x2, int y2)const;//for delete class by A
 	void CreateDesignToolBar() const;	//Tool bar of the design mode
 	void CreateSimulationToolBar() const;//Tool bar of the simulation mode
 	void CreateStatusBar() const;	//Create Status bar

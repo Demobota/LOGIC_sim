@@ -11,6 +11,7 @@ void Component::SetSelect() {
 	selected = (selected ==true)?false:true;
 }
 bool Component::GetSelect() {
+
 	return selected;
 }
 

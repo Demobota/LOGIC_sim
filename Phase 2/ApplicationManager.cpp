@@ -1,7 +1,7 @@
 ﻿#include "ApplicationManager.h"
 #include "Actions\AddANDgate2.h"
 #include"Actions\Select.h"
-
+#include"Actions\Delete.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -42,6 +42,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case SELECT:
 			pAct = new Select(this,CompList, CompCount);
 			break;
+		case DEL:
+			pAct = new Delete(this, CompList, &CompCount);
+			break;
 		case EXIT:
 			///TODO: create ExitAction here
 			break;
@@ -56,9 +59,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 ////////////////////////////////////////////////////////////////////
 
 void ApplicationManager::UpdateInterface()
-{
-		for(int i=0; i<CompCount; i++)
-			CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
+{		
+	
+	for (int i = 0; i < CompCount; i++) 
+		CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
+	
 
 }
 
