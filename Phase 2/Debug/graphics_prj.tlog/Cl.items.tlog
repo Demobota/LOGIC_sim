@@ -1,4 +1,6 @@
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Actions\AddANDgate2.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\AddANDgate2.obj
+C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Actions\Delete.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Delete.obj
+C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Actions\AddLabel.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\AddLabel.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Actions\Select.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Select.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\CMUgraphicsLib\auxil.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\auxil.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\CMUgraphicsLib\CMUgraphics.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\CMUgraphics.obj
@@ -40,6 +42,7 @@ C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\Component.cpp;C:\
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\Connection.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Connection.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\Gate.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Gate.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\InputPin.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\InputPin.obj
+C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\Label.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Label.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\OutputPin.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\OutputPin.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Components\Pin.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\Pin.obj
 C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\ApplicationManager.cpp;C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\ApplicationManager.obj

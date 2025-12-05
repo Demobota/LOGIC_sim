@@ -1,4 +1,6 @@
 ﻿#include "ApplicationManager.h"
+
+// Add-action headers (instantiate actions for all menu items)
 #include "Actions\AddANDgate2.h"
 #include"Actions\Select.h"
 #include "SaveAction.h"
@@ -6,6 +8,8 @@
 
 ////////////////////////////////////////////////////////////////////
 
+#include"Actions\Delete.h"
+#include"Actions\AddLabel.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -40,11 +44,77 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct= new AddANDgate2(this);	
 			break;
 
-		case ADD_CONNECTION:
+		case ADD_OR_GATE_2:
+			// TODO: implement and instantiate AddOR2 action
+			// e.g. pAct = new AddOR2(this);
+			break;
+
+		case ADD_NAND_GATE_2:
+			// TODO: implement and instantiate AddNAND2 action
+			// e.g. pAct = new AddNAND2(this);
+			break;
+
+		case ADD_NOR_GATE_2:
+			// TODO: implement and instantiate AddNOR2 action
+			// e.g. pAct = new AddNOR2(this);
+			break;
+
+		case ADD_XOR_GATE_2:
+			// TODO: implement and instantiate AddXOR2 action
+			// e.g. pAct = new AddXOR2(this);
+			break;
+
+		case ADD_XNOR_GATE_2:
+			// TODO: implement and instantiate AddXNOR2 action
+			// e.g. pAct = new AddXNOR2(this);
+			break;
+
+		case ADD_AND_GATE_3:
+			// TODO: implement and instantiate AddAND3 action
+			// e.g. pAct = new AddAND3(this);
+			break;
+
+		case ADD_NOR_GATE_3:
+			// TODO: implement and instantiate AddNOR3 action
+			// e.g. pAct = new AddNOR3(this);
+			break;
+
+		case ADD_XOR_GATE_3:
+			// TODO: implement and instantiate AddXOR3 action
+			// e.g. pAct = new AddXOR3(this);
+			break;
+
+		case ADD_Buff:
+			// TODO: implement and instantiate AddBuffer action
+			// e.g. pAct = new AddBuffer(this);
+			break;
+
+		case ADD_INV:
+			// TODO: implement and instantiate AddInverter action
+			// e.g. pAct = new AddInverter(this);
+			break;
+
+		case ADD_Switch:
+			// TODO: implement and instantiate AddSwitch action
+			// e.g. pAct = new AddSwitch(this);
+			break;
+
+		case ADD_LED:
+			// TODO: implement and instantiate AddLED action
+			// e.g. pAct = new AddLED(this);
+			break;
+
+			case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
 			break;
 		case SELECT:
 			pAct = new Select(this,CompList, CompCount);
+			break;
+		case DEL:
+			pAct = new Delete(this, CompList, &CompCount);
+			break;
+		case ADD_Label:
+			pAct = new AddLabel(this);
 			break;
 		case EXIT:
 			///TODO: create ExitAction here
@@ -64,12 +134,28 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = NULL;
 	}
 }
+bool ApplicationManager::IsAreaOccupied(GraphicsInfo newGate)
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		GraphicsInfo oldGate = CompList[i]->GetGFXinfo();
+
+		bool overlapX = !(newGate.x2 < oldGate.x1 || newGate.x1 > oldGate.x2);
+		bool overlapY = !(newGate.y2 < oldGate.y1 || newGate.y1 > oldGate.y2);
+
+		if (overlapX && overlapY)
+			return true;
+	}
+	return false;
+}
 ////////////////////////////////////////////////////////////////////
 
 void ApplicationManager::UpdateInterface()
-{
-		for(int i=0; i<CompCount; i++)
-			CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
+{		
+	
+	for (int i = 0; i < CompCount; i++) 
+		CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
+	
 
 }
 
@@ -156,6 +242,11 @@ void ApplicationManager::LoadAll(ifstream& inputfile)
 		{
 			// pComp = new OR2(DummyGfx, 5);
 		}
+		else if (CompType == "LABEL")
+		{
+			// Create an empty Label; load(...) will set its geometry and text
+			pComp = new Label(DummyGfx, "");
+		}
 		// ... Add other gates here ...
 
 
@@ -163,9 +254,15 @@ void ApplicationManager::LoadAll(ifstream& inputfile)
 		// If we successfully created a component, tell it to load its own data
 		if (pComp != NULL)
 		{
-			pComp->load(inputfile); // This reads x, y, label from the file
+			pComp->load(inputfile); // This reads x, y, label from the file (component-specific)
 			AddComponent(pComp);    // Add it to the Application Manager's list
+		}
+		else
+		{
+			// Unknown component type: try to recover by skipping its data line(s).
+			// This helps avoid getting stuck if file contains unsupported types.
+		// Note the parentheses around the whole function name: (numeric_limits<streamsize>::max)
+			inputfile.ignore((numeric_limits<streamsize>::max)(), '\n');
 		}
 	}
 }
-

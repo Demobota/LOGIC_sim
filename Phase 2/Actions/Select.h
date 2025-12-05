@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "Action.h"
-#include "..\Components\Component.h"
-
+#include "..\ApplicationManager.h"
 class Select: public Action
 {
 private:

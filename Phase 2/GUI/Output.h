@@ -10,7 +10,8 @@ public:
 	Output(); // Performs the Window Initialization
 	Input* CreateInput() const; //creates a pointer to the Input object
 	void ChangeTitle(string Title) const;
-
+	void whiteBox( int dimx, int dimy,int x2, int y2)const;//for delete class by A
+	void DrawLabel(GraphicsInfo r_GfxInfo, bool selected, string str) const;//for label class by A
 	void CreateDesignToolBar() const;	//Tool bar of the design mode
 	void CreateSimulationToolBar() const;//Tool bar of the simulation mode
 	void CreateStatusBar() const;	//Create Status bar
@@ -50,7 +51,7 @@ public:
 	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false , bool HighState = false) const;
 	void DrawJunctionDot(int x, int y, bool HighState) const;
 	void PrintMsg(string msg) const;	//Print a message on Status bar
-
+	void GetTextSize(int& width, int& height, string text, int fontSize = 18) const; //Get text dimensions
 
 	~Output();
 };
