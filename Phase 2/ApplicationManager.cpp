@@ -49,6 +49,13 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case EXIT:
 			///TODO: create ExitAction here
 			break;
+		case SAVE:
+			pAct = new SaveAction(this);
+			break;
+		case UNDO:
+			pAct = new LoadAction1(this);
+			break;
+
 	}
 	if(pAct)
 	{
