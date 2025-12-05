@@ -10,7 +10,7 @@ Output::Output()
 	UI.DrawColor = BLACK;
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
-	UI.MsgColor = BLUE;
+	UI.MsgColor = GREEN;
 	UI.BkGrndColor = WHITE;
 	
 	//Create the drawing window
@@ -294,9 +294,9 @@ void Output::DrawBUFFER(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)	//use image in the highlighted case
-		GateImage = "Images\\Gates\\BUFF_Hi.jpg";
+		GateImage = "Images\\Gates\\Buff_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\BUFF.jpg";
+		GateImage = "Images\\Gates\\Buff.jpg";
 
 	// Fixed typo: UI.BUFEER_Width -> UI.BUFFER_Width
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.G_Width, UI.G_Height);
@@ -435,6 +435,38 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, bool HighStat
 	int y2 = r_GfxInfo.y2;
 	pWind->DrawLine(x1, y1, x2, y1);
 	pWind->DrawLine(x2, y1, x2, y2);
+}
+void Output::GetTextSize(int& width, int& height, string text, int fontSize) const
+{
+	// Set the font to get accurate measurements
+	pWind->SetFont(fontSize, PLAIN, BY_NAME, "Arial");
+	pWind->GetStringSize(width, height, text);
+}
+
+void Output::DrawLabel(GraphicsInfo r_GfxInfo, bool selected,string str) const
+{
+	int x1 = r_GfxInfo.x1;
+	int y1 = r_GfxInfo.y1;
+	int x2 = r_GfxInfo.x2;
+	int y2 = r_GfxInfo.y2;
+	
+	// Draw the rectangle background
+	pWind->SetPen(UI.MsgColor, 3);
+	color brush = (selected) ? UI.SelectColor : UI.BkGrndColor;
+	pWind->SetBrush(brush);
+	pWind->DrawRectangle(x1, y1, x2, y2);
+	
+	// Draw the text centered in the rectangle
+	if (!str.empty()) {
+		// Set font and text color (bigger font size)
+		pWind->SetFont(18, PLAIN, BY_NAME, "Arial");
+		pWind->SetPen(UI.MsgColor);
+		// Center the text vertically and add horizontal padding
+		int textX = x1 + 10;  // Padding from left edge
+		int textY = (y1 + y2-15) / 2;  // Center vertically
+		
+		pWind->DrawString(textX, textY, str);
+	}
 }
 
 void Output::DrawJunctionDot(int x, int y, bool HighState) const

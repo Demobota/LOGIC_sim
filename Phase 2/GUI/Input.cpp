@@ -20,7 +20,7 @@ string Input::GetSrting(Output *pOut)
 	//If the user presses "ESCAPE". This function should return an empty string.
 	//"BACKSPACE" should be also supported
 	//User should see what he is typing at the status bar
-	pOut->ClearDrawingArea();
+	pOut->ClearStatusBar();
 	pOut->PrintMsg("please Enter your text: ");
 	string myst="";
 	while (true) {

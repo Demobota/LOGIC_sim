@@ -48,8 +48,8 @@ struct UI_Info	//User Interface Info.
 	// Other components
 	static const int	LED_Width = 50, LED_Height = 50;
 	static const int	CONNECTION_Width = 50, CONNECTION_Height = 50;
-	static const int	LABEL_Width = 50, LABEL_Height = 50;
-	static const int	EDIT_LABEL_Width = 50, EDIT_LABEL_Height = 50;
+	static const int	LABEL_Width = 100, LABEL_Height = 30;
+	static const int	EDIT_LABEL_Width = 100, EDIT_LABEL_Height = 30;
 	static const int	Switch_Width  = 50, Switch_Height  = 50;
 	static const int	UNDO_Width = 50, UNDO_Height = 50;
 	static const int	REDO_Width = 50, REDO_Height = 50;

@@ -2,6 +2,7 @@
 #include "Actions\AddANDgate2.h"
 #include"Actions\Select.h"
 #include"Actions\Delete.h"
+#include"Actions\AddLabel.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -44,6 +45,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case DEL:
 			pAct = new Delete(this, CompList, &CompCount);
+			break;
+		case ADD_Label:
+			pAct = new AddLabel(this);
 			break;
 		case EXIT:
 			///TODO: create ExitAction here
