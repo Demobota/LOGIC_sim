@@ -1,0 +1,13 @@
+[33m50848f0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to 50848f0741fe1d91fd1d72c3574ce422cee553a1
+[33m50848f0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: commit: to pull
+[33mc2f597e[m HEAD@{2}: commit: commit to pull
+[33ma6e97b7[m HEAD@{3}: commit: add gate components and actions(save/load remain)
+[33m02371f6[m HEAD@{4}: commit: Add validation to not allow component overlap
+[33m1d884e5[m HEAD@{5}: commit: added operate
+[33mfd05b4a[m HEAD@{6}: commit: add label is added
+[33mdcde63a[m HEAD@{7}: commit: Add delete
+[33madcaced[m HEAD@{8}: commit: Add Select(double click)
+[33m0ac5611[m HEAD@{9}: commit: make Validation in addandgate
+[33m990db8e[m HEAD@{10}: commit: Add phase 2 file, switches and LED
+[33me042ac0[m HEAD@{11}: commit: project phase 1
+[33ma031855[m HEAD@{12}: clone: from github.com:Demobota/LOGIC_sim.git
