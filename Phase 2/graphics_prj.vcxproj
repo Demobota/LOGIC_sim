@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -127,6 +127,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddANDgate2.cpp" />
+    <ClCompile Include="Actions\AddANDgate3.cpp" />
+    <ClCompile Include="Actions\AddBUFFgate.cpp" />
+    <ClCompile Include="Actions\AddINVgate.cpp" />
+    <ClCompile Include="Actions\AddNANDgate2.cpp" />
+    <ClCompile Include="Actions\AddNORgate2.cpp" />
+    <ClCompile Include="Actions\AddNORgate3.cpp" />
+    <ClCompile Include="Actions\AddORgate2.cpp" />
+    <ClCompile Include="Actions\AddXNORgate2.cpp" />
+    <ClCompile Include="Actions\AddXORgate2.cpp" />
+    <ClCompile Include="Actions\AddXORgate3.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
@@ -166,6 +176,16 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant2.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
     <ClCompile Include="Components\AND2.cpp" />
+    <ClCompile Include="Components\AND3.cpp" />
+    <ClCompile Include="Components\BUFF.cpp" />
+    <ClCompile Include="Components\INV.cpp" />
+    <ClCompile Include="Components\NAND2.cpp" />
+    <ClCompile Include="Components\NOR2.cpp" />
+    <ClCompile Include="Components\NOR3.cpp" />
+    <ClCompile Include="Components\OR2.cpp" />
+    <ClCompile Include="Components\XNOR2.cpp" />
+    <ClCompile Include="Components\XOR2.cpp" />
+    <ClCompile Include="Components\XOR3.cpp" />
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
     <ClCompile Include="Components\Gate.cpp" />
@@ -181,6 +201,16 @@
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddANDgate2.h" />
+    <ClInclude Include="Actions\AddANDgate3.h" />
+    <ClInclude Include="Actions\AddBUFFgate.h" />
+    <ClInclude Include="Actions\AddINVgate.h" />
+    <ClInclude Include="Actions\AddNANDgate2.h" />
+    <ClInclude Include="Actions\AddNORgate2.h" />
+    <ClInclude Include="Actions\AddNORgate3.h" />
+    <ClInclude Include="Actions\AddORgate2.h" />
+    <ClInclude Include="Actions\AddXNORgate2.h" />
+    <ClInclude Include="Actions\AddXORgate2.h" />
+    <ClInclude Include="Actions\AddXORgate3.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\AddLabel.h" />
     <ClInclude Include="Actions\Select.h" />
@@ -205,6 +235,16 @@
     <ClInclude Include="CMUgraphicsLib\jpeg\jpeglib.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jversion.h" />
     <ClInclude Include="Components\AND2.h" />
+    <ClInclude Include="Components\AND3.h" />
+    <ClInclude Include="Components\BUFF.h" />
+    <ClInclude Include="Components\INV.h" />
+    <ClInclude Include="Components\NAND2.h" />
+    <ClInclude Include="Components\NOR2.h" />
+    <ClInclude Include="Components\NOR3.h" />
+    <ClInclude Include="Components\OR2.h" />
+    <ClInclude Include="Components\XNOR2.h" />
+    <ClInclude Include="Components\XOR2.h" />
+    <ClInclude Include="Components\XOR3.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\Connection.h" />
     <ClInclude Include="Components\Gate.h" />

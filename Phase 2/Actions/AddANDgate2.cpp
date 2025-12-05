@@ -23,8 +23,9 @@ void AddANDgate2::ReadActionParameters() // 5/12/2025 09:13 PM by Os
 	pOut->PrintMsg("2-Input AND Gate: Click to add the gate");
 	double y1;
 	double y2;
-	int Len = UI.AND2_Width;
-	int Wdth = UI.AND2_Height;
+	//// remember when copying this as a template for other functions to change any thing with a C comment next to it - C- by A
+	int Len = UI.AND2_Width;///////C
+	int Wdth = UI.AND2_Height;//////////C
 	bool validPosition = false;
 	//Validation to not allow user to place gate at ToolBar or status bar
 	do
@@ -66,8 +67,8 @@ void AddANDgate2::Execute()
 	ReadActionParameters();
 	
 	//Calculate the rectangle Corners
-	int Len = UI.AND2_Width;
-	int Wdth = UI.AND2_Height;
+	int Len = UI.AND2_Width;/////////C
+	int Wdth = UI.AND2_Height;////////C
 	
 	GraphicsInfo GInfo; //Gfx info to be used to construct the AND2 gate
 	
@@ -75,7 +76,7 @@ void AddANDgate2::Execute()
 	GInfo.x2 = Cx + Len/2;
 	GInfo.y1 = Cy - Wdth/2;
 	GInfo.y2 = Cy + Wdth/2;
-	AND2 *pA=new AND2(GInfo, AND2_FANOUT); 
+	AND2 *pA=new AND2(GInfo, AND2_FANOUT); ///////C
 	pManager->AddComponent(pA);
 }
 
