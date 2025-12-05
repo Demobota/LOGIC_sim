@@ -1,3 +1,5 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Output.cpp
+  AddLabel.cpp
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddLabel.cpp(24,9): warning C4101: 'y2': unreferenced local variable
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddLabel.cpp(23,9): warning C4101: 'y1': unreferenced local variable
   graphics_prj.vcxproj -> C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\graphics_prj.exe

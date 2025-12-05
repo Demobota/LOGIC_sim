@@ -60,6 +60,20 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		pAct = NULL;
 	}
 }
+bool ApplicationManager::IsAreaOccupied(GraphicsInfo newGate)
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		GraphicsInfo oldGate = CompList[i]->GetGFXinfo();
+
+		bool overlapX = !(newGate.x2 < oldGate.x1 || newGate.x1 > oldGate.x2);
+		bool overlapY = !(newGate.y2 < oldGate.y1 || newGate.y1 > oldGate.y2);
+
+		if (overlapX && overlapY)
+			return true;
+	}
+	return false;
+}
 ////////////////////////////////////////////////////////////////////
 
 void ApplicationManager::UpdateInterface()

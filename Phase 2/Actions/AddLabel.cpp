@@ -23,14 +23,38 @@ void AddLabel::ReadActionParameters()
 	double y1;
 	double y2;
 
+	int Len = UI.LABEL_Width;
 	int Wdth = UI.LABEL_Height;
+	bool validPosition = false;
 	//Validation to not allow user to place gate at ToolBar or status bar
-	do {
-		//Wait for User Input
+	do
+	{
 		pIn->GetPointClicked(Cx, Cy);
-		y1 = Cy - Wdth / 2;
-		y2 = Cy + Wdth / 2;
-	} while (y1 < UI.ToolBarHeight || y2 >= UI.height - UI.StatusBarHeight);
+
+		// Calculate rectangle corners of the selected position
+		GraphicsInfo temp;
+		temp.x1 = Cx - Len / 2;
+		temp.y1 = Cy - Wdth / 2;
+		temp.x2 = Cx + Len / 2;
+		temp.y2 = Cy + Wdth / 2;
+
+		// Check screen boundaries (toolbar/status bar)
+		if (temp.y1 < UI.ToolBarHeight || temp.y2 > UI.height - UI.StatusBarHeight)
+		{
+			pOut->PrintMsg("Invalid position! Cannot place on toolbar or status bar");
+			continue;
+		}
+
+		// Check overlap with other existing components
+		if (pManager->IsAreaOccupied(temp))
+		{
+			pOut->PrintMsg("Cannot place gate on top of another component");
+			continue;
+		}
+
+		validPosition = true;
+
+	} while (!validPosition);
 	label = pIn->GetSrting(pOut);
 	//Clear Status Bar
 	pOut->ClearStatusBar();

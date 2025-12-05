@@ -21,7 +21,7 @@ private:
 	Input* InputInterface; //pointer to the Input Clase Interface
 public:	
 	ApplicationManager(); //constructor
-
+	bool IsAreaOccupied(GraphicsInfo newGate);
 	//Reads the required action from the user and returns the corresponding action type
 	ActionType GetUserAction();
 	
