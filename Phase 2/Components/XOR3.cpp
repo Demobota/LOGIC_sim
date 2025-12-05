@@ -17,7 +17,8 @@ void XOR3::Operate()
 	if (A == HIGH) highCount++;
 	if (B == HIGH) highCount++;
 	if (C == HIGH) highCount++;
-	if (highCount % 2 == 1)
+	if (highCount % 2 == 1)// checks if number of 1 inputs are odd xnor high
+		//// explanation: if A  A(.)
 		m_OutputPin.setStatus(HIGH);
 	else
 		m_OutputPin.setStatus(LOW);
