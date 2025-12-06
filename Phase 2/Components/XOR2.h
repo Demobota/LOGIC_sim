@@ -12,6 +12,8 @@ public:
 	virtual int GetOutPinStatus();
 	virtual int GetInputPinStatus(int n);
 	virtual void setInputPinStatus(int n, STATUS s);
+	virtual void save(ofstream& file);
+	virtual void load(ifstream& file);
 };
 
 #endif

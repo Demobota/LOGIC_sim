@@ -38,3 +38,24 @@ void NOR3::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n-1].setStatus(s);
 }
+
+void NOR3::save(ofstream& file)
+{
+	string lbl = GetLabel();
+	if (lbl == "")
+		file << "NOR3" << " " << -1 << " " << "$" << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	else
+		file << "NOR3" << " " << -1 << " " << lbl << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void NOR3::load(ifstream& file)
+{
+	string tempLabel;
+	int tempID;
+	int x1, y1;
+	file >> tempID >> tempLabel >> x1 >> y1;
+	m_GfxInfo.x1 = x1;
+	m_GfxInfo.y1 = y1;
+	m_GfxInfo.x2 = x1 + UI.NOR3_Width;
+	m_GfxInfo.y2 = y1 + UI.NOR3_Height;
+}

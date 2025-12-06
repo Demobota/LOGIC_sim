@@ -50,3 +50,33 @@ void AND2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n-1].setStatus(s);
 }
+
+void AND2::save(ofstream& file)
+{
+	string lbl = GetLabel();
+
+	// Logic: If empty, write $, otherwise write the label
+	if (lbl == "")
+		file << "AND2" << " " << -1 << " " << "$" << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	else
+		file << "AND2" << " " << -1 << " " << lbl << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void AND2::load(ifstream& file)
+{
+	string tempLabel;
+	int tempID;
+	int x1, y1;
+
+	// Read values in the same order
+	file >> tempID >> tempLabel >> x1 >> y1;
+
+	// We ignore ID and Label because the Component class doesn't support them right now.
+
+	// Update Graphics Info
+	m_GfxInfo.x1 = x1;
+	m_GfxInfo.y1 = y1;
+	// Calculate the other corner
+	m_GfxInfo.x2 = x1 + UI.AND2_Width;
+	m_GfxInfo.y2 = y1 + UI.AND2_Height;
+}

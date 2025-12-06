@@ -37,3 +37,24 @@ void NOR2::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n-1].setStatus(s);
 }
+
+void NOR2::save(ofstream& file)
+{
+	string lbl = GetLabel();
+	if (lbl == "")
+		file << "NOR2" << " " << -1 << " " << "$" << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	else
+		file << "NOR2" << " " << -1 << " " << lbl << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void NOR2::load(ifstream& file)
+{
+	string tempLabel;
+	int tempID;
+	int x1, y1;
+	file >> tempID >> tempLabel >> x1 >> y1;
+	m_GfxInfo.x1 = x1;
+	m_GfxInfo.y1 = y1;
+	m_GfxInfo.x2 = x1 + UI.NOR2_Width;
+	m_GfxInfo.y2 = y1 + UI.NOR2_Height;
+}

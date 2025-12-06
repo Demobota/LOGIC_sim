@@ -6,6 +6,7 @@
 #include "GUI\Input.h"
 #include "Actions\Action.h"
 #include "Components\Component.h"
+#include <fstream> // Make sure this is at the top!
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -34,8 +35,14 @@ public:
 	Output* GetOutput();
 	Input* GetInput();
 
+	// Saves all components to the provided file
+	void SaveAll(ofstream& outputfile);
+
 	//Adds a new component to the list of components
 	void AddComponent(Component* pComp);
+
+	// Loads all components from the provided file
+	void LoadAll(ifstream& inputfile);
 
 	//destructor
 	~ApplicationManager();

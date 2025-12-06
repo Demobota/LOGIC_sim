@@ -36,3 +36,24 @@ void INV::setInputPinStatus(int n, STATUS s)
 {
 	m_InputPins[n-1].setStatus(s);
 }
+
+void INV::save(ofstream& file)
+{
+	string lbl = GetLabel();
+	if (lbl == "")
+		file << "INV" << " " << -1 << " " << "$" << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+	else
+		file << "INV" << " " << -1 << " " << lbl << " " << m_GfxInfo.x1 << " " << m_GfxInfo.y1 << endl;
+}
+
+void INV::load(ifstream& file)
+{
+	string tempLabel;
+	int tempID;
+	int x1, y1;
+	file >> tempID >> tempLabel >> x1 >> y1;
+	m_GfxInfo.x1 = x1;
+	m_GfxInfo.y1 = y1;
+	m_GfxInfo.x2 = x1 + UI.INV_Width;
+	m_GfxInfo.y2 = y1 + UI.INV_Height;
+}

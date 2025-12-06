@@ -14,6 +14,8 @@ public:
 
 	virtual void setInputPinStatus(int n, STATUS s) {}//invalid ib label	//set status of Inputpin # n, to be used by connection class.
 
+	virtual void save(std::ofstream& file) override;
+	virtual void load(std::ifstream& file) override;
 
 	Label() : Component(GraphicsInfo{ 0,0,0,0 }) {}
 

@@ -3,6 +3,7 @@
 
 #include "Action.h"
 #include "..\Components\AND2.h"
+#include "../GUI/Input.h"
 
 class AddANDgate2 :	public Action
 {

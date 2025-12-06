@@ -55,7 +55,7 @@ void AddLabel::ReadActionParameters()
 		validPosition = true;
 
 	} while (!validPosition);
-	label = pIn->GetSrting(pOut);
+	label = pIn->GetString(pOut);
 	//Clear Status Bar
 	pOut->ClearStatusBar();
 

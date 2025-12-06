@@ -1,47 +1,55 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  main.cpp
-  Output.cpp
-  Input.cpp
   XOR3.cpp
   XOR2.cpp
   XNOR2.cpp
-  OutputPin.cpp
-  OR2.cpp
   NOR3.cpp
-  NOR2.cpp
-  NAND2.cpp
-  Label.cpp
   INV.cpp
-  Gate.cpp
-  Connection.cpp
-  Component.cpp
   BUFF.cpp
   AND3.cpp
-  AND2.cpp
   ApplicationManager.cpp
-  Generating Code...
-  Compiling...
-  Select.cpp
-  Delete.cpp
   AddXORgate3.cpp
   AddXORgate2.cpp
   AddXNORgate2.cpp
-  AddORgate2.cpp
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddORgate2.cpp(23,9): warning C4101: 'y2': unreferenced local variable
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddORgate2.cpp(22,9): warning C4101: 'y1': unreferenced local variable
   AddNORgate3.cpp
-  AddNORgate2.cpp
-  AddNANDgate2.cpp
-  AddLabel.cpp
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddLabel.cpp(24,9): warning C4101: 'y2': unreferenced local variable
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddLabel.cpp(23,9): warning C4101: 'y1': unreferenced local variable
   AddINVgate.cpp
   AddBUFFgate.cpp
   AddANDgate3.cpp
-  AddANDgate2.cpp
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddANDgate2.cpp(25,9): warning C4101: 'y2': unreferenced local variable
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddANDgate2.cpp(24,9): warning C4101: 'y1': unreferenced local variable
   Generating Code...
   LINK : .\Debug\graphics_prj.exe not found or not built by the last incremental link; performing full link
 AddANDgate2.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+jutils.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jmemnobs.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jidctint.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jerror.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdpostct.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdmaster.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdinput.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdcolor.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdapistd.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jcomapi.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+keyqueue.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CMUgraphics.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jquant1.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jidctred.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jidctflt.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdsample.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdmerge.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdmainct.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jddctmgr.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdatasrc.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jcparam.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+mousequeue.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+image.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jquant2.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jmemmgr.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jidctfst.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdtrans.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdphuff.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdmarker.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdhuff.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdcoefct.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jdapimin.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+windowinput.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+jpegload.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+auxil.obj : warning LNK4020: a type record in 'c:\users\adel0\repos\logic_sim\phase 2\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   graphics_prj.vcxproj -> C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\graphics_prj.exe
