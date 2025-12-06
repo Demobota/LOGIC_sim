@@ -10,6 +10,8 @@
 #include "Actions\AddXORgate3.h"
 #include "Actions\AddINVgate.h"
 #include "Actions\AddBUFFgate.h"
+#include "Actions\AddSwitch.h"
+#include "Actions\AddLED.h"
 #include"Actions\Select.h"
 #include "SaveAction.h"
 #include "loadAction1.h"
@@ -27,6 +29,8 @@
 #include "Components\INV.h"
 #include "Components\BUFF.h"
 #include "Components\Label.h"
+#include "Components\Switch.h"
+#include "Components\LED.h"
 
 ////////////////////////////////////////////////////////////////////
 
@@ -94,6 +98,12 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case ADD_Buff:
 			pAct = new AddBUFFgate(this);
+			break;
+		case ADD_Switch:
+			pAct = new AddSwitch(this);
+			break;
+		case ADD_LED:
+			pAct = new AddLED(this);
 			break;
 		case ADD_CONNECTION:
 			//TODO: Create AddConection Action here
@@ -271,6 +281,14 @@ void ApplicationManager::LoadAll(ifstream& inputfile)
 		else if (CompType == "LABEL")
 		{
 			pComp = new Label(DummyGfx, "");
+		}
+		else if (CompType == "SWITCH")
+		{
+			pComp = new Switch(DummyGfx);
+		}
+		else if (CompType == "LED")
+		{
+			pComp = new LED(DummyGfx);
 		}
 
 

@@ -2,10 +2,12 @@ C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddANDgate2.cpp;C:\Users\adel0\re
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddANDgate3.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddANDgate3.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddBUFFgate.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddBUFFgate.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddINVgate.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddINVgate.obj
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddLED.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddLED.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddNANDgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddNANDgate2.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddNORgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddNORgate2.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddNORgate3.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddNORgate3.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddORgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddORgate2.obj
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddSwitch.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddSwitch.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddXNORgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddXNORgate2.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddXORgate2.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddXORgate2.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Actions\AddXORgate3.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\AddXORgate3.obj
@@ -63,8 +65,10 @@ C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Connection.cpp;C:\Users\adel0\
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Gate.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Gate.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\InputPin.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\InputPin.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Label.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Label.obj
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\LED.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\LED.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\OutputPin.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\OutputPin.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Pin.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Pin.obj
+C:\Users\adel0\repos\LOGIC_sim\Phase 2\Components\Switch.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Switch.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\ApplicationManager.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\ApplicationManager.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\GUI\Input.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Input.obj
 C:\Users\adel0\repos\LOGIC_sim\Phase 2\GUI\Output.cpp;C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\Output.obj
