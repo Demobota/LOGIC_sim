@@ -15,6 +15,7 @@
 #include"Actions\Select.h"
 #include "SaveAction.h"
 #include "loadAction1.h"
+#include "SimulationModeAction.h"
 
 // Component includes for LoadAll
 #include "Components\AND2.h"
@@ -111,6 +112,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case SELECT:
 			pAct = new Select(this,CompList, CompCount);
 			break;
+		case SIM_MODE: // osama tamer
+			pAct = new SimulationModeAction(this);
+			break;
+
 		case DEL:
 			pAct = new Delete(this, CompList, &CompCount);
 			break;
@@ -126,6 +131,31 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case UNDO:
 			pAct = new LoadAction1(this);
 			break;
+		// osama tamer, note: lesa ha3mel el classes btoo3 el sim mode ba3den
+		case RUN_SIM:
+			OutputInterface->PrintMsg("run button clicked");
+			break;
+	    case Step:
+            OutputInterface->PrintMsg("step button clicked");
+			break;
+		case Reset:
+			OutputInterface->PrintMsg("reset button clicked");
+			break;
+		case Create_TruthTable:
+			OutputInterface->PrintMsg("truth table button clicked");
+			break;
+		case PROBE:
+			OutputInterface->PrintMsg("probe button clicked");
+			break;
+		case Simulate:
+			OutputInterface->PrintMsg("simulation button clicked");
+            break;
+		case DSN_MODE:
+			OutputInterface->PrintMsg("exiting simulation mode...");
+			OutputInterface->ClearDrawingArea(); // b yesheel el simulation toolbar
+			UI.AppMode = DESIGN;
+			break;
+		
 
 	}
 	if(pAct)

@@ -203,6 +203,7 @@
     <ClCompile Include="LoadAction1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SaveAction.cpp" />
+    <ClCompile Include="SimulationModeAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h" />
@@ -269,6 +270,7 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="LoadAction1.h" />
     <ClInclude Include="SaveAction.h" />
+    <ClInclude Include="SimulationModeAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

@@ -148,28 +148,61 @@ void Output::CreateDesignToolBar() const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 //Draws the menu (toolbar) in the simulation mode
-void Output::CreateSimulationToolBar() const
+void Output::CreateSimulationToolBar() const // osama tamer
 {
-	UI.AppMode = SIMULATION;	//Simulation Mode
+	// Simulation toolbar starts below the design toolbar
+	int yStart = UI.ToolBarHeight;
 
-	//TODO: Write code to draw the simualtion toolbar (similar to that of design toolbar drawing)
-	ClearDrawingArea();
+	// Height available before the bottom status bar
+	int availableHeight = UI.height - UI.StatusBarHeight - yStart;
 
-	pWind->SetPen(BLACK, 3);
-	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	// Clear only the space where the vertical toolbar goes
+	pWind->SetPen(UI.BkGrndColor, 1);
+	pWind->SetBrush(UI.BkGrndColor);
+	pWind->DrawRectangle(
+		0,
+		yStart,
+		UI.ToolItemWidth,
+		yStart + availableHeight
+	);
 
-	pWind->DrawImage("images\\Simulation\\SIM.jpg", 0, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\RUN.jpg", UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\STEP.jpg", 2 * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\RESET.jpg", 3 * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\TRUTH_TABLE.jpg", 4 * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\PROBE.jpg", 5 * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	pWind->DrawImage("images\\Simulation\\EXIT.jpg", 6 * UI.ToolItemWidth, 0, UI.ToolItemWidth, UI.ToolItemHeight);
-	
-	pWind->SetPen(BLACK, 3);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+	// Y position for buttons
+	int y = yStart;
+
+	// Draw buttons vertically
+	pWind->DrawImage("Images/Simulation/SIM.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/RUN.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/STEP.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/RESET.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/TRUTH_TABLE.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/PROBE.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+	y += UI.ToolItemHeight;
+
+	pWind->DrawImage("Images/Simulation/EXIT.jpg", 0, y,
+		UI.ToolItemWidth, UI.ToolItemHeight);
+
+	//line mabean el design bar w el vertical bar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, yStart, UI.ToolItemWidth, yStart);
 }
+
+
 
 //======================================================================================//
 //								Components Drawing Functions							//

@@ -113,24 +113,30 @@ ActionType Input::GetUserAction() const
 		//[3] User clicks on the status bar
 		return STATUS_BAR;
 	}
-	else if (UI.AppMode == SIMULATION)	//Application is in Simulation mode
+	else if (UI.AppMode == SIMULATION)
 	{
-		//return SIM_MODE;	//This should be changed after creating the compelete simulation bar 
-		if (y >= 0 && y < UI.ToolBarHeight) {
-			int ClickedItemOrderSim = (x / UI.ToolItemWidth);
+		// b ye check if el click gowa el vertical simulation toolbar
+		if (x >= 0 && x < UI.ToolItemWidth &&
+			y >= UI.ToolBarHeight &&
+			y < UI.height - UI.StatusBarHeight)
+		{
+			// order bta3 el buttons fel simulation toolbar
+			int ClickedItemOrderSim =
+				(y - UI.ToolBarHeight) / UI.ToolItemHeight;
+
 			switch (ClickedItemOrderSim)
 			{
-			    case ITM_SIM: return Simulate;
-				case ITM_RUN: return RUN_SIM;
-				case ITM_STEP:return Step;
-				case ITM_RESET:return Reset;
-				case ITM_TRUTH:return Create_TruthTable;
-				case ITM_PROBE: return PROBE;
-				case ITM_EXIT_SIM: return DSN_MODE;
-			
+			case ITM_SIM:         return Simulate;
+			case ITM_RUN:         return RUN_SIM;
+			case ITM_STEP:        return Step;
+			case ITM_RESET:       return Reset;
+			case ITM_TRUTH:       return Create_TruthTable;
+			case ITM_PROBE:       return PROBE;
+			case ITM_EXIT_SIM:    return DSN_MODE;
 			}
 		}
 	}
+
 
 	// Safe fallback to avoid undefined behaviour if none of the above returned
 	return DSN_TOOL;
