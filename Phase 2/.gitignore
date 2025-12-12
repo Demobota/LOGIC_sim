@@ -2,3 +2,50 @@
 .vs/
 *.vsidx
 .vscode/
+
+# Build directories
+Debug/
+Release/
+x64/
+x86/
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# Visual Studio build artifacts
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.sbr
+*.bsc
+*.tlog
+*.idb
+*.pch
+*.ipch
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+*.vcxproj.filters.user
+
+# Compiled files
+*.o
+*.a
+*.so
+*.dylib
+
+# Executables
+*.out
+*.app
+
+# Visual Studio temporary files
+*.tmp
+*.temp
+*.log
+*.cache

@@ -1,4 +1,0 @@
-D:\TA Cairo Uni\Programming Techniques\project\PT-LogiSim-2025\Project Code Framework\Debug\graphics_prj.exe
-C:\Users\adel0\repos\LOGIC_sim\Phase 2\Debug\graphics_prj.exe
-C:\Users\rebal\OneDrive\Documents\LOGIC_sim\Phase 2\Debug\graphics_prj.exe
-C:\Users\Mr. Tamer\Downloads\LogicSimClone\Phase 2\Debug\graphics_prj.exe
