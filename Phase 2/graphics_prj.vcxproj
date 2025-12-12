@@ -189,7 +189,6 @@
     <ClCompile Include="Components\XOR2.cpp" />
     <ClCompile Include="Components\XOR3.cpp" />
     <ClCompile Include="Components\Component.cpp" />
-    <ClCompile Include="Components\Connection.cpp" />
     <ClCompile Include="Components\Gate.cpp" />
     <ClCompile Include="Components\InputPin.cpp" />
     <ClCompile Include="Components\Label.cpp" />
@@ -255,7 +254,6 @@
     <ClInclude Include="Components\XOR2.h" />
     <ClInclude Include="Components\XOR3.h" />
     <ClInclude Include="Components\Component.h" />
-    <ClInclude Include="Components\Connection.h" />
     <ClInclude Include="Components\Gate.h" />
     <ClInclude Include="Components\InputPin.h" />
     <ClInclude Include="Components\Label.h" />

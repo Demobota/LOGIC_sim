@@ -202,6 +202,7 @@ Output* ApplicationManager::GetOutput()
 	return OutputInterface;
 }
 
+
 ////////////////////////////////////////////////////////////////////
 
 ApplicationManager::~ApplicationManager()
