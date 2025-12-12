@@ -239,7 +239,7 @@
     <ClCompile Include="Actions\Add_connection.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.cpp">
+    <ClCompile Include="Components\Connection.cpp">
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Actions\LoadAction1.cpp">
