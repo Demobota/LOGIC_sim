@@ -126,7 +126,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.cpp" />
+    <ClCompile Include="Components\Connection.cpp" />
     <ClCompile Include="Actions\AddANDgate2.cpp" />
     <ClCompile Include="Actions\AddANDgate3.cpp" />
     <ClCompile Include="Actions\AddBUFFgate.cpp" />
