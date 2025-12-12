@@ -43,7 +43,7 @@ public:
 
 	// Loads all components from the provided file
 	void LoadAll(ifstream& inputfile);
-	
+	Component* GetComponent(int x, int y);
 	//destructor
 	~ApplicationManager();
 };

@@ -16,6 +16,7 @@
 #include "SaveAction.h"
 #include "loadAction1.h"
 #include "SimulationModeAction.h"
+#include"Actions\Add_connection.h"
 
 // Component includes for LoadAll
 #include "Components\AND2.h"
@@ -54,6 +55,21 @@ void ApplicationManager::AddComponent(Component* pComp)
 	CompList[CompCount++] = pComp;		
 }
 ////////////////////////////////////////////////////////////////////
+
+Component* ApplicationManager::GetComponent(int x, int y)
+{
+	for (int i = 0; i < CompCount; i++)
+	{
+		GraphicsInfo GInfo = CompList[i]->GetGFXinfo();
+		if (x >= GInfo.x1 && x <= GInfo.x2 && y >= GInfo.y1 && y <= GInfo.y2)
+		{
+			return CompList[i];
+		}
+	}
+	return NULL;
+}
+///////////////////////////////////////////////////////////////////
+
 
 ActionType ApplicationManager::GetUserAction()
 {
@@ -107,6 +123,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddLED(this);
 			break;
 		case ADD_CONNECTION:
+			pAct = new Add_connection(this);
 			//TODO: Create AddConection Action here
 			break;
 		case SELECT:

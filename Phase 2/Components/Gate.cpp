@@ -14,3 +14,11 @@ Gate::Gate(int r_Inputs, int r_FanOut):m_OutputPin(r_FanOut)
 	for(int i=0; i<m_Inputs; i++)
 		m_InputPins[i].setComponent(this);
 }
+InputPin* Gate::GetInputPin(int index)
+{
+	if (index >= 0 && index < m_Inputs)
+		return &m_InputPins[index];
+
+	// Fallback: Return the last pin if index is out of bounds
+	return &m_InputPins[m_Inputs-1];
+}

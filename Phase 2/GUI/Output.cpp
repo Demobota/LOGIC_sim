@@ -525,7 +525,10 @@ void Output::DrawJunctionDot(int x, int y, bool HighState) const
 	pWind->DrawCircle(x, y, 5, FILLED);
 }
 
-
+void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	DrawConnection(r_GfxInfo, selected, false);
+}
 Output::~Output()
 {
 	delete pWind;

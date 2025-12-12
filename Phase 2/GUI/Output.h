@@ -52,6 +52,7 @@ public:
 	void DrawJunctionDot(int x, int y, bool HighState) const;
 	void PrintMsg(string msg) const;	//Print a message on Status bar
 	void GetTextSize(int& width, int& height, string text, int fontSize = 18) const; //Get text dimensions
-
+	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const;
+	
 	~Output();
 };
