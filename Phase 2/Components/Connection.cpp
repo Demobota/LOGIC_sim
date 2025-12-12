@@ -7,12 +7,12 @@ Connection::Connection(const GraphicsInfo &r_GfxInfo, OutputPin *pSrcPin,InputPi
 	DstPin = pDstPin;
 }
 void Connection::setSourcePin(OutputPin *pSrcPin)
-{	SrcPin = pSrcPin;	}
+{
+	SrcPin = pSrcPin;
+}
 
 OutputPin* Connection::getSourcePin()
 {	return SrcPin;	}
-
-
 void Connection::setDestPin(InputPin *pDstPin)
 {	DstPin = pDstPin;	}
 
@@ -28,7 +28,7 @@ void Connection::Operate()
 
 void Connection::Draw(Output* pOut,bool selected)
 {	
-	pOut->DrawConnection(m_GfxInfo,selected);
+	pOut->DrawConnection(m_GfxInfo, selected, false);
 }
 
 int Connection::GetOutPinStatus()	//returns status of outputpin if LED, return -1
@@ -46,3 +46,5 @@ void Connection::setInputPinStatus(int n, STATUS s)
 {
 	SrcPin->setStatus(s);
 }
+ void Connection::save(ofstream& file){}
+ void Connection::load(ifstream& file){}
