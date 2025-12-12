@@ -435,7 +435,7 @@
     <ClInclude Include="Actions\Add_connection.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.h">
+    <ClInclude Include="Components\Connection.h">
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Actions\LoadAction1.h">
