@@ -1,8 +1,8 @@
 #include "SaveAction.h"
-#include "..\Phase 2\ApplicationManager.h"
+#include "..\ApplicationManager.h"
 
-#include "..\Phase 2\GUI\Input.h"  // <--- ADD THIS
-#include "..\Phase 2\GUI\Output.h" // <--- ADD THIS
+#include "..\GUI\Input.h"  // <--- ADD THIS
+#include "..\GUI\Output.h" // <--- ADD THIS
 #include <string> // Added this
 
 using namespace std; // <--- ADD THIS

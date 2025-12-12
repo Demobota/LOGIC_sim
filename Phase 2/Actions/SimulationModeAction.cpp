@@ -1,6 +1,6 @@
 #include "SimulationModeAction.h"
-#include "ApplicationManager.h"
-#include "GUI/Output.h"
+#include "..\ApplicationManager.h"
+#include "..\GUI\Output.h"
 //osama tamer
 SimulationModeAction::SimulationModeAction(ApplicationManager* pApp)
     : Action(pApp)

@@ -235,10 +235,22 @@
     <ClCompile Include="GUI\Output.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
-    <ClCompile Include="LoadAction1.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SaveAction.cpp" />
-    <ClCompile Include="SimulationModeAction.cpp" />
+    <ClCompile Include="Actions\Add_connection.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\LoadAction1.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\SaveAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\SimulationModeAction.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h">
@@ -420,9 +432,21 @@
     <ClInclude Include="GUI\UI_Info.h">
       <Filter>GUI</Filter>
     </ClInclude>
-    <ClInclude Include="LoadAction1.h" />
-    <ClInclude Include="SaveAction.h" />
-    <ClInclude Include="SimulationModeAction.h" />
+    <ClInclude Include="Actions\Add_connection.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\LoadAction1.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\SaveAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\SimulationModeAction.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

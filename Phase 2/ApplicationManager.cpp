@@ -13,9 +13,9 @@
 #include "Actions\AddSwitch.h"
 #include "Actions\AddLED.h"
 #include"Actions\Select.h"
-#include "SaveAction.h"
-#include "loadAction1.h"
-#include "SimulationModeAction.h"
+#include "Actions\SaveAction.h"
+#include "Actions\LoadAction1.h"
+#include "Actions\SimulationModeAction.h"
 #include"Actions\Add_connection.h"
 
 // Component includes for LoadAll

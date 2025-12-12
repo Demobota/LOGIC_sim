@@ -143,7 +143,10 @@
     <ClCompile Include="Actions\Add_connection.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
     <ClCompile Include="Actions\AddLabel.cpp" />
+    <ClCompile Include="Actions\LoadAction1.cpp" />
+    <ClCompile Include="Actions\SaveAction.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
+    <ClCompile Include="Actions\SimulationModeAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -201,10 +204,7 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
-    <ClCompile Include="LoadAction1.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SaveAction.cpp" />
-    <ClCompile Include="SimulationModeAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.h" />
@@ -225,7 +225,10 @@
     <ClInclude Include="Actions\Add_connection.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\AddLabel.h" />
+    <ClInclude Include="Actions\LoadAction1.h" />
+    <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\Select.h" />
+    <ClInclude Include="Actions\SimulationModeAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -270,9 +273,6 @@
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
-    <ClInclude Include="LoadAction1.h" />
-    <ClInclude Include="SaveAction.h" />
-    <ClInclude Include="SimulationModeAction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

@@ -1,7 +1,7 @@
 #include "LoadAction1.h"
-#include "ApplicationManager.h"
-#include "GUI/Input.h"
-#include "GUI/Output.h"
+#include "..\ApplicationManager.h"
+#include "..\GUI\Input.h"
+#include "..\GUI\Output.h"
 #include <fstream>
 
 LoadAction1::LoadAction1(ApplicationManager* pApp) : Action(pApp)
