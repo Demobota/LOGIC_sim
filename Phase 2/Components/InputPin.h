@@ -2,15 +2,21 @@
 #define _INPUTPIN_H
 
 #include "Pin.h"
-class Component; //Forward class declaration
+class Component;
 
-class InputPin: public Pin	//inherited from class Pin
+class InputPin : public Pin
 {
-	Component* pComp; //Component at which this pin is associated
+	Component* pComp;
+	bool isConnected; //
+
 public:
 	InputPin();
-	void setComponent(Component* pCmp);	//sets the component of this input pin
-	Component* getComponent();	//returns the component of this input pin
+	void setComponent(Component* pCmp);
+	Component* getComponent();
+
+
+	void setConnection(bool status) { isConnected = status; }
+	bool getConnectionStatus() { return isConnected; }
 };
 
 #endif
