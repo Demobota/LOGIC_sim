@@ -17,6 +17,7 @@
 #include "Actions\LoadAction1.h"
 #include "Actions\SimulationModeAction.h"
 #include"Actions\Add_connection.h"
+#include "Actions\TruthTable.h"
 
 // Component includes for LoadAll
 #include "Components\AND2.h"
@@ -38,6 +39,7 @@
 
 #include"Actions\Delete.h"
 #include"Actions\AddLabel.h"
+#include"Actions\Move.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -66,6 +68,13 @@ Component* ApplicationManager::GetComponent(int x, int y)
 			return CompList[i];
 		}
 	}
+	return NULL;
+}
+
+Component* ApplicationManager::GetComponentByIndex(int index) const
+{
+	if (index >= 0 && index < CompCount)
+		return CompList[index];
 	return NULL;
 }
 ///////////////////////////////////////////////////////////////////
@@ -136,6 +145,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case DEL:
 			pAct = new Delete(this, CompList, &CompCount);
 			break;
+		case MOVE:
+			pAct = new Move(this);
+			break;
 		case ADD_Label:
 			pAct = new AddLabel(this);
 			break;
@@ -159,7 +171,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			OutputInterface->PrintMsg("reset button clicked");
 			break;
 		case Create_TruthTable:
-			OutputInterface->PrintMsg("truth table button clicked");
+			pAct = new TruthTable(this);
 			break;
 		case PROBE:
 			OutputInterface->PrintMsg("probe button clicked");

@@ -1,6 +1,8 @@
 //#include "Input.h"
 #include "Input.h"
 #include "Output.h"
+#include "..\CMUgraphicsLib\mousequeue.h"
+#include <windows.h> // For Sleep function
 
 Input::Input(window* pW)
 {
@@ -145,6 +147,49 @@ ActionType Input::GetUserAction() const
 
 	// Safe fallback to avoid undefined behaviour if none of the above returned
 	return DSN_TOOL;
+}
+
+void Input::GetMouseCoord(int &x, int &y)
+{
+	pWind->GetMouseCoord(x, y);
+}
+
+int Input::GetButtonState(int &x, int &y)
+{
+	buttonstate bs = pWind->GetButtonState(LEFT_BUTTON, x, y);
+	return (bs == BUTTON_DOWN) ? 1 : 0;
+}
+
+bool Input::WaitForDoubleClick(int &x, int &y)
+{
+	// Wait for first click
+	int x1, y1, x2, y2;
+	pWind->WaitMouseClick(x1, y1);
+	
+	// Try to get second click quickly (double-click detection)
+	// Use a loop with small delays to check for second click
+	DWORD startTime = GetTickCount();
+	const DWORD doubleClickTime = 500; // 500ms double-click window
+	
+	while ((GetTickCount() - startTime) < doubleClickTime) {
+		clicktype ct = pWind->GetMouseClick(x2, y2);
+		if (ct == LEFT_CLICK) {
+			// Check if second click is near first click (within 10 pixels)
+			int dx = x2 - x1;
+			int dy = y2 - y1;
+			if (dx * dx + dy * dy < 100) { // Within 10 pixels
+				x = x2;
+				y = y2;
+				return true; // Double-click detected
+			}
+		}
+		Sleep(10); // Small delay to avoid busy waiting
+	}
+	
+	// Single click only (timeout)
+	x = x1;
+	y = y1;
+	return false;
 }
 
 Input::~Input()

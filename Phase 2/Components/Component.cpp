@@ -7,6 +7,9 @@ Component::Component(const GraphicsInfo &r_GfxInfo)
 GraphicsInfo Component::GetGFXinfo() {
 	return m_GfxInfo;
 }
+void Component::SetGFXinfo(GraphicsInfo newGfxInfo) {
+	m_GfxInfo = newGfxInfo;
+}
 void Component::SetSelect() {
 	selected = (selected ==true)?false:true;
 }

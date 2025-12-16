@@ -1,38 +1,39 @@
 #include "LED.h"
 
-LED::LED(const GraphicsInfo &r_GfxInfo) : Component(r_GfxInfo)
+LED::LED(const GraphicsInfo& r_GfxInfo) : Component(r_GfxInfo)
 {
-	m_Status = LOW;	// Default to OFF
+	m_Status = LOW;
 	m_InputPin.setStatus(LOW);
-	m_InputPin.setComponent(this);	// Set the component for the input pin
+	m_InputPin.setComponent(this);
 }
 
 void LED::Operate()
 {
-	// LED updates its status based on the input pin
+	// Update status based on input pin
 	m_Status = (STATUS)m_InputPin.getStatus();
 }
 
 void LED::Draw(Output* pOut, bool selected)
 {
+	// Call the Output class to draw the LED
 	pOut->DrawLED(m_GfxInfo, selected, (m_Status == HIGH));
 }
 
 int LED::GetOutPinStatus()
 {
-	return -1;	// LED has no output pin
+	return -1; // LED has no output
 }
 
 int LED::GetInputPinStatus(int n)
 {
+	// Return the status of the single input pin
 	return m_InputPin.getStatus();
 }
 
 void LED::setInputPinStatus(int n, STATUS s)
 {
-	// This sets the input pin status
 	m_InputPin.setStatus(s);
-	Operate();	// Update LED status based on input
+	Operate(); // Update the LED immediately
 }
 
 void LED::save(ofstream& file)
@@ -52,11 +53,12 @@ void LED::load(ifstream& file)
 	int x1, y1;
 	int status;
 	file >> tempID >> tempLabel >> x1 >> y1 >> status;
+
 	m_GfxInfo.x1 = x1;
 	m_GfxInfo.y1 = y1;
 	m_GfxInfo.x2 = x1 + UI.LED_Width;
 	m_GfxInfo.y2 = y1 + UI.LED_Height;
+
 	m_Status = (status == 1) ? HIGH : LOW;
 	m_InputPin.setStatus(m_Status);
 }
-

@@ -251,9 +251,12 @@
     <ClCompile Include="Actions\SimulationModeAction.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\TruthTable.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
+	  <ClCompile Include="Actions\TruthTable.cpp">
+		  <Filter>Actions</Filter>
+	  </ClCompile>
+	  <ClCompile Include="Actions\Move.cpp">
+		  <Filter>Actions</Filter>
+	  </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\Action.h">
@@ -447,10 +450,13 @@
     <ClInclude Include="Actions\SimulationModeAction.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.h" />
-    <ClInclude Include="Actions\TruthTable.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
+	  <ClInclude Include="..\..\..\Downloads\Phase 2 - Student Version(1)\Phase 2\Components\Connection.h" />
+	  <ClInclude Include="Actions\TruthTable.h">
+		  <Filter>Actions</Filter>
+	  </ClInclude>
+	  <ClInclude Include="Actions\Move.h">
+		  <Filter>Actions</Filter>
+	  </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
