@@ -22,7 +22,8 @@ public:
 	
 	virtual void save(ofstream& file);
 	virtual void load(ifstream& file);
-	
+	void set_state(STATUS s);
+
 	// Additional method to toggle switch
 	void Toggle();
 	

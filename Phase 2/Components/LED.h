@@ -18,11 +18,12 @@ public:
 	
 	virtual int GetOutPinStatus();	// Returns -1 (LED has no output pin)
 	virtual int GetInputPinStatus(int n);	// Returns the LED status
-	virtual void setInputPinStatus(int n, STATUS s);	// Sets the input pin status (n is ignored)
+	virtual void setInputPinStatus(int n);	// Sets the input pin status (n is ignored)
 	
 	virtual void save(ofstream& file);
 	virtual void load(ifstream& file);
-	
+	int GetInputPinStatus(); // Returns the status of the pin connected to the LED
+
 	// Get the input pin for connections
 	InputPin* GetInputPin() { return &m_InputPin; }
 };

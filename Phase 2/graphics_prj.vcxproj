@@ -126,6 +126,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actions\TruthTable.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
     <ClCompile Include="Actions\AddANDgate2.cpp" />
     <ClCompile Include="Actions\AddANDgate3.cpp" />
@@ -229,6 +230,7 @@
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulationModeAction.h" />
+    <ClInclude Include="Actions\TruthTable.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

@@ -1,5 +1,5 @@
 ﻿#include "Select.h"
-
+#include "..\ApplicationManager.h"
 
 Select::Select(ApplicationManager* pApp, Component* compList[],int length)
 	: Action(pApp), Components(compList),countcomp(length)
@@ -32,32 +32,38 @@ void Select::Execute()
 {	//Get clicked point
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
-	
+
 	// Validate pointers before proceeding
 	if (Components == nullptr || countcomp <= 0) {
 		return;
 	}
 	
 	
+
 	
 	
 	
 	// Then find and select the clicked component
-	for (int i = 0; i < countcomp; i++) {
-		if (Components[i] != nullptr) {
-			GraphicsInfo ginfo = Components[i]->GetGFXinfo();
-			if ((ginfo).x1 <= px && (ginfo).x2 >= px && (ginfo).y1 <= py && (ginfo).y2 >= py) {
-				// Update component's internal selection state
-				Components[i]->SetSelect();
-				if (Components[i]->GetSelect()) {
-					pOut->PrintMsg("Selected a component");
+	if (UI.AppMode == DESIGN) {
+		for (int i = 0; i < countcomp; i++) {
+			if (Components[i] != nullptr) {
+				GraphicsInfo ginfo = Components[i]->GetGFXinfo();
+				if ((ginfo).x1 <= px && (ginfo).x2 >= px && (ginfo).y1 <= py && (ginfo).y2 >= py) {
+					// Update component's internal selection state
+					Components[i]->SetSelect();
+					if (Components[i]->GetSelect()) {
+						pOut->PrintMsg("Selected a component");
+					}
+					else {
+						pOut->PrintMsg("Deselected a component");
+					}
+					break;  // Only select one component
 				}
-				else {
-					pOut->PrintMsg("Deselected a component");
-				}
-				break;  // Only select one component
 			}
 		}
+	}
+	else {
+
 	}
 }
 

@@ -35,6 +35,10 @@ public:
 	Output* GetOutput();
 	Input* GetInput();
 
+	// --- Add these two lines inside the public section ---
+	int GetCompCount() const;
+	Component* const* GetCompList() const;
+
 	// Saves all components to the provided file
 	void SaveAll(ofstream& outputfile);
 

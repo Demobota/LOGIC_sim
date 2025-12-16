@@ -249,6 +249,18 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 // ApplicationManager.cpp inside LoadAll loop
 // In ApplicationManager.cpp
 
+// --- Add this at the very end of ApplicationManager.cpp ---
+
+int ApplicationManager::GetCompCount() const
+{
+	return CompCount;
+}
+
+Component* const* ApplicationManager::GetCompList() const
+{
+	return CompList;
+}
+
 // Change "ofstream" to "ifstream" 
 // In ApplicationManager.cpp
 
