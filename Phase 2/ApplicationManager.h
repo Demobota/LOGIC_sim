@@ -44,6 +44,11 @@ public:
 	// Loads all components from the provided file
 	void LoadAll(ifstream& inputfile);
 	Component* GetComponent(int x, int y);
+	
+	// Get component list access for actions
+	int GetComponentCount() const { return CompCount; }
+	Component* GetComponentByIndex(int index) const;
+	
 	//destructor
 	~ApplicationManager();
 };

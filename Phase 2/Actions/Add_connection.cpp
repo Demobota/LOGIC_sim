@@ -72,8 +72,6 @@ void Add_connection::Execute()
 			GraphicsInfo DstGfx = DstCmp->GetGFXinfo();
 			GInfo.x2 = DstGfx.x1 + (DstGfx.x2 - DstGfx.x1) / 2;
 			GInfo.y2 = DstGfx.y2;
-
-
 			GInfo.x2 = DstGfx.x1;
 			GInfo.y2 = (DstGfx.y1 + DstGfx.y2) / 2;
 		}

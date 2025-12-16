@@ -126,6 +126,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
     <ClCompile Include="Actions\AddANDgate2.cpp" />
     <ClCompile Include="Actions\AddANDgate3.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\AddLabel.h" />
     <ClInclude Include="Actions\LoadAction1.h" />
+    <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\SimulationModeAction.h" />

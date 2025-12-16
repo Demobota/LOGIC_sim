@@ -38,6 +38,7 @@
 
 #include"Actions\Delete.h"
 #include"Actions\AddLabel.h"
+#include"Actions\Move.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -66,6 +67,13 @@ Component* ApplicationManager::GetComponent(int x, int y)
 			return CompList[i];
 		}
 	}
+	return NULL;
+}
+
+Component* ApplicationManager::GetComponentByIndex(int index) const
+{
+	if (index >= 0 && index < CompCount)
+		return CompList[index];
 	return NULL;
 }
 ///////////////////////////////////////////////////////////////////
@@ -135,6 +143,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case DEL:
 			pAct = new Delete(this, CompList, &CompCount);
+			break;
+		case MOVE:
+			pAct = new Move(this);
 			break;
 		case ADD_Label:
 			pAct = new AddLabel(this);
