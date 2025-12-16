@@ -24,8 +24,9 @@ InputPin* Connection::getDestPin()
 
 void Connection::Operate()
 {
-	//Status of connection destination pin = status of connection source pin
-	DstPin->setStatus((STATUS)SrcPin->getStatus());
+	// Transmit the status from the Source Pin to the Destination Pin
+	STATUS s = SrcPin->getStatus();
+	DstPin->setStatus(s);
 }
 
 void Connection::Draw(Output* pOut,bool selected)
@@ -100,3 +101,4 @@ void Connection::UpdateDestEndpoint(Component* pDstComp)
 		m_GfxInfo.y2 = (DstGfx.y1 + DstGfx.y2) / 2;
 	}
 }
+

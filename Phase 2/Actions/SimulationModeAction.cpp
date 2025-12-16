@@ -24,7 +24,7 @@ void SimulationModeAction::Execute()
 
     // Switch internal application state (if required)
     UI.AppMode = SIMULATION;
-
+    pManager->UpdateSimulation();
     // Clear status bar and redraw interface
     pOut->ClearStatusBar();
     pOut->PrintMsg("Simulation Mode Activated");

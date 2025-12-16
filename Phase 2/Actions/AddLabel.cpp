@@ -22,7 +22,6 @@ void AddLabel::ReadActionParameters()
 	pOut->PrintMsg("Label: Click to add the AddLabel");
 	double y1;
 	double y2;
-
 	int Len = UI.LABEL_Width;
 	int Wdth = UI.LABEL_Height;
 	bool validPosition = false;
@@ -48,8 +47,8 @@ void AddLabel::ReadActionParameters()
 		// Check overlap with other existing components
 		if (pManager->IsAreaOccupied(temp))
 		{
-			pOut->PrintMsg("Cannot place gate on top of another component");
-			continue;
+			pOut->PrintMsg("Adding label to component");
+			labelforcomp = true;
 		}
 
 		validPosition = true;
@@ -75,20 +74,45 @@ void AddLabel::Execute()
 	if (!label.empty()) {
 		pOut->GetTextSize(textWidth, textHeight, label, fontSize);
 	}
-	
+
 	// Calculate box dimensions: text width + padding on both sides
 	const int horizontalPadding = 20;  // 10 pixels padding on each side
 	int Len = (textWidth > 0) ? (textWidth + horizontalPadding) : UI.LABEL_Width;
 	int Wdth = UI.LABEL_Height;
 
-	GraphicsInfo GInfo; //Gfx info to be used to construct the label
+	GraphicsInfo GInfo;
+	Component* targetComponent = nullptr;  // To store the component we're attaching to
+	if (labelforcomp) {
+		targetComponent = pManager->GetComponent(Cx, Cy);
+		if (!targetComponent) {
+			pOut->PrintMsg("Error: No component found at the selected position");
+			return;
+		}
 
-	GInfo.x1 = Cx - Len / 2;
-	GInfo.x2 = Cx + Len / 2;
-	GInfo.y1 = Cy - Wdth / 2;
-	GInfo.y2 = Cy + Wdth / 2;
-	Label *pA = new Label(GInfo, label);
+		// Get the component's position
+		GraphicsInfo compG = targetComponent->GetGFXinfo();
+
+		// Place label centered above the component
+		int centerX = (compG.x1 + compG.x2) / 2;
+		GInfo.x1 = centerX - Len / 2;
+		GInfo.x2 = centerX + Len / 2;
+		GInfo.y2 = compG.y1 - 5;  // small gap above component
+		GInfo.y1 = GInfo.y2 - Wdth;
+	}
+	else {
+		// Free-floating label
+		GInfo.x1 = Cx - Len / 2;
+		GInfo.x2 = Cx + Len / 2;
+		GInfo.y1 = Cy - Wdth / 2;
+		GInfo.y2 = Cy + Wdth / 2;
+	}
+	// Create and add the label
+	Label* pA = new Label(GInfo, label);
+	if (labelforcomp && targetComponent) {
+		pA->SetAttachedComponent(targetComponent);
+	}
 	pManager->AddComponent(pA);
+
 }
 
 void AddLabel::Undo()

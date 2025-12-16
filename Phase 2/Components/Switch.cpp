@@ -28,7 +28,7 @@ int Switch::GetInputPinStatus(int n)
 	return -1;	// Switch has no input pins
 }
 
-void Switch::setInputPinStatus(int n, STATUS s)
+void Switch::setOutputPinStatus(int n, STATUS s)
 {
 	// This is used to change the switch status
 	m_Status = s;

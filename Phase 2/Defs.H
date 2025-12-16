@@ -117,7 +117,7 @@ enum SimMenuItem //The items of the simulation menu (you should add more items)
 	ITM_STEP,		//Step simulation
 	ITM_RESET,		//Reset simulation
 	ITM_TRUTH,		//Truth table menu item
-	ITM_PROBE,		//Probe/inspect signal
+	ITM_PROBE,//Probe/inspect signal
 	ITM_EXIT_SIM,	//Exit simulation menu / return to design
 
 

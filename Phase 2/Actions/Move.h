@@ -14,6 +14,8 @@ private:
 	Component* selectedComp; // Component to be moved
 	GraphicsInfo oldGfxInfo;  // Store old position for undo
 	int offsetX, offsetY;   // Store offset for redo
+	int OldCx, OldCy;       // Old cursor position
+	int NewCx, NewCy;       // New cursor position
 public:
 	Move(ApplicationManager* pApp);
 	virtual ~Move(void);

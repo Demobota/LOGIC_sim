@@ -137,6 +137,11 @@ ActionType Input::GetUserAction() const
 			case ITM_EXIT_SIM:    return DSN_MODE;
 			}
 		}
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			// Try to toggle a switch at the clicked position
+			return Change_Switch;//user want to select/unselect a component
+		}
 	}
 
 
@@ -172,7 +177,7 @@ bool Input::WaitForDoubleClick(int &x, int &y)
 			// Check if second click is near first click (within 10 pixels)
 			int dx = x2 - x1;
 			int dy = y2 - y1;
-			if (dx * dx + dy * dy < 100) { // Within 10 pixels
+			if (dx * dx + dy * dy < 500) { // Within 10 pixels
 				x = x2;
 				y = y2;
 				return true; // Double-click detected

@@ -5,7 +5,10 @@
 #include "..\Components\Gate.h"
 #include "..\Components\Switch.h"
 #include "..\Components\LED.h"
+#include "..\Components\Label.h"
 
+#include <iostream>
+using namespace std;
 Move::Move(ApplicationManager* pApp) : Action(pApp)
 {
 	selectedComp = NULL;
@@ -22,14 +25,14 @@ void Move::ReadActionParameters()
 	Input* pIn = pManager->GetInput();
 
 	// Wait for user to double-click on a component to drag
-	pOut->PrintMsg("Move: Double-click on a component to drag it");
+	pOut->PrintMsg("Move: triple-click on a component to drag it");
 	
 	// Wait for user to double-click on a component
 	bool isDoubleClick = false;
 	do {
 		isDoubleClick = pIn->WaitForDoubleClick(clickX, clickY);
 		if (!isDoubleClick) {
-			pOut->PrintMsg("Move: Please double-click on a component");
+			pOut->PrintMsg("Move: Please triple-click on a component");
 			Sleep(500); // Brief pause before next attempt
 		}
 	} while ((!isDoubleClick) || (clickY < UI.ToolBarHeight || clickY >= UI.height - UI.StatusBarHeight));
@@ -232,6 +235,31 @@ void Move::Execute()
 
 	// Final update of connections
 	UpdateConnectionsForComponent(pManager, selectedComp);
+	
+	
+	// Try to get the label using the new position (15 pixels above the component)
+	Component* pLabel = pManager->GetComponent(oldGfxInfo.x1, oldGfxInfo.y1 - 15);
+
+	if (Label* label = dynamic_cast<Label*>(pLabel)) {
+		if (label->GetAttachedComponent() == selectedComp) {
+			// Get current label position
+			GraphicsInfo labelGfx = label->GetGFXinfo();
+
+			// Calculate the offset the component moved
+			int moveOffsetX = currentGfx.x1 - oldGfxInfo.x1;
+			int moveOffsetY = currentGfx.y1 - oldGfxInfo.y1;
+			pOut->whiteBox(labelGfx.x1 - 2, labelGfx.y1 - 2,
+				labelGfx.x2 + 2, labelGfx.y2 + 2);
+			// Move label by the same offset
+			labelGfx.x1 += moveOffsetX;
+			labelGfx.x2 += moveOffsetX;
+			labelGfx.y1 += moveOffsetY;
+			labelGfx.y2 += moveOffsetY;
+
+			// Update the label's graphics info
+			label->SetGFXinfo(labelGfx);
+		}
+	}
 	pManager->UpdateInterface();
 	
 	pOut->PrintMsg("Component moved successfully! Connections updated.");
@@ -240,21 +268,39 @@ void Move::Execute()
 void Move::Undo()
 {
 	if (selectedComp != NULL) {
+		// Find and move label back
+		GraphicsInfo currentGfx = selectedComp->GetGFXinfo();
+		Component* pLabel = pManager->GetComponent(currentGfx.x1, currentGfx.y1 - 15);
+
+		if (Label* label = dynamic_cast<Label*>(pLabel)) {
+			if (label->GetAttachedComponent() == selectedComp) {
+				GraphicsInfo labelGfx = label->GetGFXinfo();
+				int moveOffsetX = oldGfxInfo.x1 - currentGfx.x1;
+				int moveOffsetY = oldGfxInfo.y1 - currentGfx.y1;
+				labelGfx.x1 += moveOffsetX;
+				labelGfx.x2 += moveOffsetX;
+				labelGfx.y1 += moveOffsetY;
+				labelGfx.y2 += moveOffsetY;
+
+				label->SetGFXinfo(labelGfx);
+			}
+		}
+
 		// Restore old position
 		selectedComp->SetGFXinfo(oldGfxInfo);
-		
+
 		// Update connections
 		int compCount = pManager->GetComponentCount();
 		for (int i = 0; i < compCount; i++) {
 			Component* pComp = pManager->GetComponentByIndex(i);
 			Connection* pConn = dynamic_cast<Connection*>(pComp);
 			if (pConn == NULL) continue;
-			
+
 			Component* pSrcComp = FindComponentWithOutputPin(pManager, pConn->getSourcePin());
 			if (pSrcComp == selectedComp) {
 				pConn->UpdateSourceEndpoint(selectedComp);
 			}
-			
+
 			Component* pDstComp = pConn->getDestPin()->getComponent();
 			if (pDstComp == selectedComp) {
 				pConn->UpdateDestEndpoint(selectedComp);

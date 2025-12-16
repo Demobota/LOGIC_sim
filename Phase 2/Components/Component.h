@@ -29,7 +29,7 @@ public:
 	//set and get label
 	virtual void setInputPinStatus(int n, STATUS s)=0;	//set status of Inputpin # n, to be used by connection class.
 	string GetLabel() { return m_Label; } // <--- Add this line
-	
+	void SetLabel(string label) { m_Label = label; }
 	Component();	
 	
 	//Destructor must be virtual

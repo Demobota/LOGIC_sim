@@ -161,7 +161,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		// osama tamer, note: lesa ha3mel el classes btoo3 el sim mode ba3den
 		case RUN_SIM:
-			OutputInterface->PrintMsg("run button clicked");
+			UpdateSimulation();
 			break;
 	    case Step:
             OutputInterface->PrintMsg("step button clicked");
@@ -175,6 +175,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case PROBE:
 			OutputInterface->PrintMsg("probe button clicked");
 			break;
+		case Change_Switch:
+		{
+			// Get the click position
+			int x, y;
+			InputInterface->GetPointClicked(x, y);
+			// Try to toggle a switch at the clicked position
+			if (!ToggleSwitch(x, y))
+			{
+				// If no switch was toggled, show a message
+				OutputInterface->PrintMsg("Click on a switch to toggle it");
+			}
+			break;
+		}
 		case Simulate:
 			OutputInterface->PrintMsg("simulation button clicked");
             break;
@@ -207,15 +220,13 @@ bool ApplicationManager::IsAreaOccupied(GraphicsInfo newGate)
 	}
 	return false;
 }
+
 ////////////////////////////////////////////////////////////////////
 
 void ApplicationManager::UpdateInterface()
-{		
-	
+{	
 	for (int i = 0; i < CompCount; i++) 
 		CompList[i]->Draw(OutputInterface, CompList[i]->GetSelect());
-	
-
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -230,7 +241,6 @@ Output* ApplicationManager::GetOutput()
 	return OutputInterface;
 }
 
-
 ////////////////////////////////////////////////////////////////////
 
 ApplicationManager::~ApplicationManager()
@@ -239,7 +249,6 @@ ApplicationManager::~ApplicationManager()
 		delete CompList[i];
 	delete OutputInterface;
 	delete InputInterface;
-	
 }
 
 void ApplicationManager::SaveAll(ofstream& outputfile)
@@ -252,7 +261,7 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 	{
 		if (CompList[i] != NULL)
 		{
-			CompList[i]->save(outputfile); // This calls the AND2::save you just wrote!
+			CompList[i]->save(outputfile);
 		}
 	}
 }
@@ -350,7 +359,6 @@ void ApplicationManager::LoadAll(ifstream& inputfile)
 			pComp = new LED(DummyGfx);
 		}
 
-
 		// --- E. LOADING ---
 		// If we successfully created a component, tell it to load its own data
 		if (pComp != NULL)
@@ -362,8 +370,48 @@ void ApplicationManager::LoadAll(ifstream& inputfile)
 		{
 			// Unknown component type: try to recover by skipping its data line(s).
 			// This helps avoid getting stuck if file contains unsupported types.
-		// Note the parentheses around the whole function name: (numeric_limits<streamsize>::max)
-			inputfile.ignore((numeric_limits<streamsize>::max)(), '\n');
+		}
+	}
+}
+
+
+
+bool ApplicationManager::ToggleSwitch(int x, int y)
+{
+	// Get the component at the clicked position
+	Component* pComp = GetComponent(x, y);
+	if (pComp != nullptr)
+	{
+		// Try to cast to Switch
+		Switch* pSwitch = dynamic_cast<Switch*>(pComp);
+		if (pSwitch != nullptr)
+		{
+			// Toggle the switch
+			pSwitch->Toggle();
+			
+			// Update the simulation to reflect the change
+			UpdateSimulation();
+			UpdateInterface();
+			
+			// Log the action
+			OutputInterface->PrintMsg("Switch toggled: " + string(pSwitch->GetOutPinStatus() == HIGH ? "ON" : "OFF"));
+			return true;
+		}
+	}
+	return false;
+}
+
+void ApplicationManager::UpdateSimulation()
+{
+	// Loop multiple times to ensure signal propagation across cascaded gates
+	for (int repeat = 0; repeat < 5; repeat++)
+	{
+		for (int i = 0; i < CompCount; i++)
+		{
+			if (CompList[i] != NULL)
+			{
+				CompList[i]->Operate();
+			}
 		}
 	}
 }

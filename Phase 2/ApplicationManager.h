@@ -48,7 +48,10 @@ public:
 	// Get component list access for actions
 	int GetComponentCount() const { return CompCount; }
 	Component* GetComponentByIndex(int index) const;
-	
+
+	// Toggle switch at given coordinates if it exists
+	bool ToggleSwitch(int x, int y);
+	void UpdateSimulation();//for connection 
 	//destructor
 	~ApplicationManager();
 };

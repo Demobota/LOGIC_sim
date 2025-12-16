@@ -30,7 +30,7 @@ public:
 	virtual void save(ofstream& file);
 	virtual void load(ifstream& file);
 	virtual void setInputPinStatus(int n, STATUS s);	//set status of Inputpin # n, to be used by connection class.
-	
+
 	// Update connection endpoints based on current component positions
 	void UpdateSourceEndpoint(Component* pSrcComp);  // Update source endpoint
 	void UpdateDestEndpoint(Component* pDstComp);   // Update destination endpoint
