@@ -21,6 +21,8 @@ public:
 	virtual void setOutputPinStatus(int n, STATUS s);	// Changes switch status (n is ignored)
 	virtual void save(ofstream& file);
 	virtual void load(ifstream& file);
+	void set_state(STATUS s);
+
 	virtual void setInputPinStatus(int n, STATUS s){}
 	// Additional method to toggle switch
 	void Toggle();
