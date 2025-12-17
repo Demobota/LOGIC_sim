@@ -20,7 +20,8 @@ public:
 	virtual void load(std::ifstream& file) override;
 
 	Label() : Component(GraphicsInfo{ 0,0,0,0 }) {}
-
+	string GetText() { return label; }//a
+	void SetText(string text) {  label = text; }//a
 	//Destructor must be virtual
 	virtual ~Label();
 };

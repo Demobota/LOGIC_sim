@@ -24,7 +24,7 @@ public:
 	
 	virtual OutputPin* GetOutputPin() { return &m_OutputPin; }
 	virtual InputPin* GetInputPin(int index); // Declaration only
-
+	int GetInputsCount() { return m_Inputs; } // Returns the number of input pins
 };
 
 #endif

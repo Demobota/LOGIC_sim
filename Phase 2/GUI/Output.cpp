@@ -462,12 +462,11 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected, bool HighStat
 		pWind->SetPen(UI.SelectColor, 3);
 	else
 		pWind->SetPen(UI.ConnColor, 3);
-	int x1 = r_GfxInfo.x1;
-	int y1 = r_GfxInfo.y1;
-	int x2 = r_GfxInfo.x2;
-	int y2 = r_GfxInfo.y2;
-	pWind->DrawLine(x1, y1, x2, y1);
-	pWind->DrawLine(x2, y1, x2, y2);
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, (r_GfxInfo.x1 + r_GfxInfo.x2) / 2, r_GfxInfo.y1);
+
+	pWind->DrawLine((r_GfxInfo.x1 + r_GfxInfo.x2) / 2, r_GfxInfo.y1, (r_GfxInfo.x1 + r_GfxInfo.x2) / 2, r_GfxInfo.y2);
+
+	pWind->DrawLine((r_GfxInfo.x1 + r_GfxInfo.x2) / 2, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
 }
 void Output::GetTextSize(int& width, int& height, string text, int fontSize) const
 {

@@ -39,6 +39,7 @@
 
 #include"Actions\Delete.h"
 #include"Actions\AddLabel.h"
+#include"Actions\EditLabel.h"
 #include"Actions\Move.h"
 ApplicationManager::ApplicationManager()
 {
@@ -150,6 +151,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 		case ADD_Label:
 			pAct = new AddLabel(this);
+			break;
+		case EDIT_Label:
+			pAct = new EditLabel(this);
 			break;
 		case EXIT:
 			///TODO: create ExitAction here
@@ -425,6 +429,24 @@ void ApplicationManager::UpdateSimulation()
 			{
 				CompList[i]->Operate();
 			}
+		}
+	}
+}
+void ApplicationManager::RemoveComponent(Component* pComp)
+{
+	if (!pComp) return;
+
+	for (int i = 0; i < CompCount; i++)
+	{
+		if (CompList[i] == pComp)
+		{
+			delete CompList[i];
+
+			CompList[i] = CompList[CompCount - 1];
+			CompList[CompCount - 1] = nullptr;
+			CompCount--;
+
+			return;
 		}
 	}
 }

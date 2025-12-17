@@ -7,6 +7,7 @@ class Delete :
 	Component** Components;
 	int *countcomp;
 	int x1, y1, x2, y2;//coordinates of object to delete
+	int deletedCount;
 	public:
 
 	virtual void ReadActionParameters();

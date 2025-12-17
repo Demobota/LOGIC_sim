@@ -126,7 +126,6 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actions\EditLabel.cpp" />
     <ClCompile Include="Actions\TruthTable.cpp" />
     <ClCompile Include="Actions\Move.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
@@ -228,7 +227,6 @@
     <ClInclude Include="Actions\Add_connection.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\AddLabel.h" />
-    <ClInclude Include="Actions\EditLabel.h" />
     <ClInclude Include="Actions\LoadAction1.h" />
     <ClInclude Include="Actions\Move.h" />
     <ClInclude Include="Actions\SaveAction.h" />

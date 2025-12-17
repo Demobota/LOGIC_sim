@@ -1,56 +1,57 @@
 #include "Delete.h"
 
-
-
-Delete::Delete(ApplicationManager* pApp, Component* compList[], int *length)
+Delete::Delete(ApplicationManager* pApp, Component* compList[], int* length)
 	: Action(pApp), Components(compList), countcomp(length)
 {
 	// Validate consistency between pointer and length
-	if (compList == nullptr && *length > 0) {
-		*countcomp = 0;
+	if (compList == nullptr || length == nullptr)
+	{
+		Components = nullptr;
+		countcomp = nullptr;
 	}
+
+	deletedCount = 0;
 }
+
 Delete::~Delete() {}
+
 void Delete::ReadActionParameters()
 {
-	//Get a Pointer to the Input / Output Interfaces
-	if (Components == nullptr || *countcomp <= 0) {
+	if (Components == nullptr || countcomp == nullptr || *countcomp <= 0)
 		return;
-	}
-	
-	for (int i = 0; i < *countcomp; i++) {
-		if (Components[i]->GetSelect()) {
-			
+
+	Output* pOut = pManager->GetOutput();
+
+	for (int i = *countcomp - 1; i >= 0; i--)
+	{
+		if (Components[i] && Components[i]->GetSelect())
+		{
 			GraphicsInfo ginfo = Components[i]->GetGFXinfo();
-			x1 = ginfo.x1;
-			y1 = ginfo.y1;
-			y2 = ginfo.y2;
-			x2 = ginfo.x2;
-			if ((*countcomp - 1) != i) {
-				
-				delete Components[i];
-				Components[i] = Components[*countcomp - 1];
-				Components[*countcomp - 1] = nullptr;
-				
-			}else{ delete Components[i]; Components[*countcomp - 1] = nullptr;
-			}
-			break;  // Only select one component
+			pOut->whiteBox(ginfo.x1 - 5, ginfo.y1 - 5,
+				ginfo.x2 + 5, ginfo.y2 + 5);
+			pManager->RemoveComponent(Components[i]);
+
+			deletedCount++;
 		}
 	}
-	//Validation to not allow user to select non gates
-	
 }
-void Delete::Execute() {	//Get clicked point
+
+
+void Delete::Execute() {
+	//Get clicked point
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
-	(*countcomp)--;
+
 	// Validate pointers before proceeding
-	
-	pOut->whiteBox(x1, y1,x2,y2);
-	pOut->PrintMsg("component deleted");
-
-
+	if (deletedCount > 0) {
+		 // Redraw everything
+		pOut->PrintMsg("Deleted " + to_string(deletedCount) + " component(s)");
+	}
+	else {
+		pOut->PrintMsg("No components selected to delete");
+	}
 }
+
 void Delete::Undo()
 {
 }
@@ -58,4 +59,3 @@ void Delete::Undo()
 void Delete::Redo()
 {
 }
-

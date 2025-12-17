@@ -56,6 +56,7 @@ public:
 	// Toggle switch at given coordinates if it exists
 	bool ToggleSwitch(int x, int y);
 	void UpdateSimulation();//for connection 
+	void RemoveComponent(Component* pComp);
 	//destructor
 	~ApplicationManager();
 };
