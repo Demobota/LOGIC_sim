@@ -118,6 +118,10 @@ ActionType Input::GetUserAction() const
 	else if (UI.AppMode == SIMULATION)
 	{
 		// b ye check if el click gowa el vertical simulation toolbar
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return SELECT;	//user want to select/unselect a component
+		}
 		if (x >= 0 && x < UI.ToolItemWidth &&
 			y >= UI.ToolBarHeight &&
 			y < UI.height - UI.StatusBarHeight)
@@ -136,6 +140,7 @@ ActionType Input::GetUserAction() const
 			case ITM_PROBE:       return PROBE;
 			case ITM_EXIT_SIM:    return DSN_MODE;
 			}
+
 		}
 		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{

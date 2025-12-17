@@ -76,3 +76,4 @@ Switch::~Switch()
 	if (m_OutputPin)
 		delete m_OutputPin;
 }
+

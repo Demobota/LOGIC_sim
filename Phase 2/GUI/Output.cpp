@@ -529,6 +529,84 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	DrawConnection(r_GfxInfo, selected, false);
 }
+// ======================================================================================
+//                              Truth Table Drawing Function
+// ======================================================================================
+
+void Output::DrawTruthTable(int numInputs, int numOutputs, int* tableData) const
+{
+	int totalCols = numInputs + numOutputs;
+	int numRows = pow(2, numInputs);
+
+	// 1. Setup Table Dimensions
+	int startX = 100;
+	int startY = UI.ToolBarHeight + 20;
+	int cellWidth = 50;
+	int cellHeight = 25;
+
+	// If table is too tall, scale it down slightly
+	if (numRows > 16) cellHeight = 20;
+
+	// 2. Clear Area for Table (White Box)
+	int tableWidth = totalCols * cellWidth;
+	int tableHeight = (numRows + 1) * cellHeight; // +1 for Header
+
+	pWind->SetPen(BLACK, 2);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(startX, startY, startX + tableWidth, startY + tableHeight);
+
+	// 3. Draw Headers
+	pWind->SetFont(18, BOLD, BY_NAME, "Arial");
+	pWind->SetPen(BLACK);
+
+	// Input Headers
+	for (int i = 0; i < numInputs; i++)
+	{
+		string s = "In" + to_string(i + 1);
+		pWind->DrawString(startX + (i * cellWidth) + 5, startY + 5, s);
+	}
+
+	// Output Headers
+	for (int i = 0; i < numOutputs; i++)
+	{
+		string s = "Out" + to_string(i + 1);
+		pWind->DrawString(startX + ((numInputs + i) * cellWidth) + 5, startY + 5, s);
+	}
+
+	// Draw Header Separator Line
+	pWind->SetPen(BLACK, 2);
+	pWind->DrawLine(startX, startY + cellHeight, startX + tableWidth, startY + cellHeight);
+
+	// Draw Vertical Line between Inputs and Outputs
+	pWind->SetPen(BLUE, 3);
+	int splitX = startX + (numInputs * cellWidth);
+	pWind->DrawLine(splitX, startY, splitX, startY + tableHeight);
+
+
+	// 4. Draw Data (0s and 1s)
+	pWind->SetFont(16, PLAIN, BY_NAME, "Arial");
+	pWind->SetPen(BLACK);
+
+	for (int r = 0; r < numRows; r++)
+	{
+		int yPos = startY + ((r + 1) * cellHeight);
+
+		for (int c = 0; c < totalCols; c++)
+		{
+			// Get the value from the 1D array
+			// Index = (Row * TotalCols) + Col
+			int val = tableData[(r * totalCols) + c];
+
+			string s = to_string(val);
+			pWind->DrawString(startX + (c * cellWidth) + 15, yPos + 5, s);
+		}
+
+		// Draw horizontal grid lines
+		pWind->SetPen(GREY, 1);
+		pWind->DrawLine(startX, yPos + cellHeight, startX + tableWidth, yPos + cellHeight);
+	}
+}
+
 Output::~Output()
 {
 	delete pWind;

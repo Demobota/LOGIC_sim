@@ -54,5 +54,8 @@ public:
 	void GetTextSize(int& width, int& height, string text, int fontSize = 18) const; //Get text dimensions
 	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const;
 	
+	// Draws the Truth Table (Inputs + Outputs) on the screen
+	void DrawTruthTable(int numInputs, int numOutputs, int* tableData) const;
+
 	~Output();
 };

@@ -17,6 +17,7 @@
 #include "Actions\LoadAction1.h"
 #include "Actions\SimulationModeAction.h"
 #include"Actions\Add_connection.h"
+#include "Actions\TruthTable.h"
 
 // Component includes for LoadAll
 #include "Components\AND2.h"
@@ -170,7 +171,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			OutputInterface->PrintMsg("reset button clicked");
 			break;
 		case Create_TruthTable:
-			OutputInterface->PrintMsg("truth table button clicked");
+			pAct = new TruthTable(this);
 			break;
 		case PROBE:
 			OutputInterface->PrintMsg("probe button clicked");
@@ -268,6 +269,18 @@ void ApplicationManager::SaveAll(ofstream& outputfile)
 
 // ApplicationManager.cpp inside LoadAll loop
 // In ApplicationManager.cpp
+
+// --- Add this at the very end of ApplicationManager.cpp ---
+
+int ApplicationManager::GetCompCount() const
+{
+	return CompCount;
+}
+
+Component* const* ApplicationManager::GetCompList() const
+{
+	return CompList;
+}
 
 // Change "ofstream" to "ifstream" 
 // In ApplicationManager.cpp
